@@ -13,4 +13,9 @@ export interface CardItem {
   languages: CardProps[];
   libraries: CardProps[];
   platforms: CardProps[];
+  devops: CardProps[];
+  databases: CardProps[];
+  apis: CardProps[];
+  cloud: CardProps[];
+  testing: CardProps[];
 }

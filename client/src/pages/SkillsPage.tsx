@@ -27,7 +27,7 @@ const WelcomePage: React.FC = () => {
         }}
       >
         <ThemeProvider theme={theme}>
-          <Typography variant="h2">My Skills</Typography>
+          <Typography variant="h2">Technicial Skills</Typography>
         </ThemeProvider>
       </Box>
       <Container>

@@ -1,11 +1,20 @@
 import {
+  faAws,
+  faBootstrap,
+  faCloudflare,
+  faCloudsmith,
   faCss3Alt,
+  faDocker,
+  faGit,
+  faGithub,
   faHtml5,
   faJava,
   faJs,
   faNode,
   faPython,
   faReact,
+  faSass,
+  faTelegramPlane,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Typography } from "@mui/material";
@@ -130,6 +139,13 @@ export const getCards = (): CardItem => {
         buttonText: "",
       },
       {
+        header: "Style Sheet",
+        icon: <FontAwesomeIcon icon={faSass} style={{ fontSize: "8rem" }} />,
+        subtitle: "SASS",
+        desc: "",
+        buttonText: "",
+      },
+      {
         header: "Query",
         icon: (
           <Typography
@@ -205,6 +221,26 @@ export const getCards = (): CardItem => {
         desc: "",
         buttonText: "",
       },
+      {
+        header: "Engine",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Nginx
+          </Typography>
+        ),
+        subtitle: "Nginx",
+        desc: "",
+        buttonText: "",
+      },
     ],
     frameworks: [
       {
@@ -275,6 +311,69 @@ export const getCards = (): CardItem => {
         buttonText: "",
       },
     ],
+    devops: [
+      {
+        header: "GitHub",
+        icon: <FontAwesomeIcon icon={faGithub} style={{ fontSize: "8rem" }} />,
+        subtitle: "Version Control",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "GitHub Actions",
+        icon: <FontAwesomeIcon icon={faGit} style={{ fontSize: "8rem" }} />,
+        subtitle: "CI/CD Automation",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Docker",
+        icon: <FontAwesomeIcon icon={faDocker} style={{ fontSize: "8rem" }} />,
+        subtitle: "Containerization",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Container Orchestration",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Kubernetes
+          </Typography>
+        ),
+        subtitle: "Container Orchestration",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "IaC Tool",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Terraform
+          </Typography>
+        ),
+        subtitle: "Terraform",
+        desc: "",
+        buttonText: "",
+      },
+    ],
     libraries: [
       {
         header: "Library",
@@ -284,9 +383,136 @@ export const getCards = (): CardItem => {
         buttonText: "",
       },
       {
-        header: "Library",
+        header: "State Management",
         icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "8rem" }} />,
         subtitle: "Redux",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Client-side Routing",
+        icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "8rem" }} />,
+        subtitle: "React Router",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "HTTP Client",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Axios
+          </Typography>
+        ),
+        subtitle: "Axios",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Auth Middleware",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Passport.js
+          </Typography>
+        ),
+        subtitle: "Passport.js",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Password Hashing",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            bcrypt
+          </Typography>
+        ),
+        subtitle: "bcrypt",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Variable Management",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            dotenv
+          </Typography>
+        ),
+        subtitle: "bcrypt",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Linting Tool",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            ESLint
+          </Typography>
+        ),
+        subtitle: "ESLint",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Code Formatter",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Prettier
+          </Typography>
+        ),
+        subtitle: "Prettier",
         desc: "",
         buttonText: "",
       },
@@ -311,7 +537,18 @@ export const getCards = (): CardItem => {
         buttonText: "",
       },
       {
-        header: "UI",
+        header: "UI/UX",
+        icon: (
+          <FontAwesomeIcon icon={faBootstrap} style={{ fontSize: "8rem" }} />
+        ),
+        subtitle: "Bootstrap",
+        desc: "",
+        buttonText: "",
+      },
+    ],
+    databases: [
+      {
+        header: "Databases",
         icon: (
           <Typography
             variant="h3"
@@ -323,10 +560,144 @@ export const getCards = (): CardItem => {
               justifyContent: "center",
             }}
           >
-            Bootstrap
+            NoSQL
           </Typography>
         ),
-        subtitle: "Bootstrap",
+        subtitle: "NoSQL Databases",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Databases",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            MongoDB
+          </Typography>
+        ),
+        subtitle: "MongoDB",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Databases",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            DB2
+          </Typography>
+        ),
+        subtitle: "DB2",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Databases",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            PostgreSQL
+          </Typography>
+        ),
+        subtitle: "PostgreSQL",
+        desc: "",
+        buttonText: "",
+      },
+    ],
+    apis: [
+      {
+        header: "API Development",
+        icon: (
+          <FontAwesomeIcon icon={faCloudsmith} style={{ fontSize: "8rem" }} />
+        ),
+        subtitle: "RESTful API",
+        desc: "",
+        buttonText: "",
+      },
+    ],
+    cloud: [
+      {
+        header: "AWS",
+        icon: <FontAwesomeIcon icon={faAws} style={{ fontSize: "8rem" }} />,
+        subtitle: "Amazon Web Services",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "IBM Cloud",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            IBM Cloud
+          </Typography>
+        ),
+        subtitle: "IBM Cloud",
+        desc: "",
+        buttonText: "",
+      },
+    ],
+    testing: [
+      {
+        header: "Postman",
+        icon: (
+          <FontAwesomeIcon
+            icon={faTelegramPlane}
+            style={{ fontSize: "8rem" }}
+          />
+        ),
+        subtitle: "API Testing",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Jest",
+        icon: (
+          <Typography
+            variant="h3"
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Jest
+          </Typography>
+        ),
+        subtitle: "JavaScript Testing Framework",
         desc: "",
         buttonText: "",
       },
