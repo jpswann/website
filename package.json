@@ -1,0 +1,20 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "main": "server/dist/index.js",
+  "scripts": {
+    "build": "rimraf server/dist && cd server && npx tsc",
+    "server": "nodemon ts-node server/src/index.js",
+    "client": "npm start --prefix client",
+    "predev": "npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1"
+  }
+}
