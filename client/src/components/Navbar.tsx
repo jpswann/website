@@ -47,7 +47,9 @@ const Navbar: React.FC = () => {
       >
         <Toolbar>
           <Box sx={{ flexGrow: 1, display: "flex" }}>
-            <img src="js.png" alt="JPSwann" width="54px" />
+            <a href="/">
+              <img src="js.png" alt="JPSwann" width="54px" />
+            </a>
           </Box>
           {isMobile ? (
             <>
