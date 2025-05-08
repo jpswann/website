@@ -3,7 +3,6 @@ import {
   AppBar,
   Box,
   Toolbar,
-  Typography,
   IconButton,
   Drawer,
   List,
@@ -47,14 +46,9 @@ const Navbar: React.FC = () => {
         }}
       >
         <Toolbar>
-          <Typography
-            variant="h6"
-            sx={{
-              flexGrow: 1,
-            }}
-          >
-            Jason Swann
-          </Typography>
+          <Box sx={{ flexGrow: 1, display: "flex" }}>
+            <img src="js.png" alt="JPSwann" width="54px" />
+          </Box>
           {isMobile ? (
             <>
               <IconButton

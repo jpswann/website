@@ -44,3 +44,5 @@ coverage/
 
 # misc
 *.log
+
+package-lock.json

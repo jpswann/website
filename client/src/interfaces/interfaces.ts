@@ -7,3 +7,10 @@ export interface CardProps {
   desc: string;
   buttonText: string;
 }
+
+export interface CardItem {
+  frameworks: CardProps[];
+  languages: CardProps[];
+  libraries: CardProps[];
+  platforms: CardProps[];
+}
