@@ -26,14 +26,14 @@ const SkillCards: React.FC = () => {
   const Cards: SkillCardItem = {
     languages: [
       {
-        header: "Programing",
+        header: "",
         icon: <FontAwesomeIcon icon={faJs} style={{ fontSize: "5rem" }} />,
         subtitle: "JavaScript",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Programing",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -53,21 +53,21 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Programing",
+        header: "",
         icon: <FontAwesomeIcon icon={faPython} style={{ fontSize: "5rem" }} />,
         subtitle: "Python",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Programing",
+        header: "",
         icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
         subtitle: "Java",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Programing",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -87,7 +87,7 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Programing",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -107,7 +107,7 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Programing",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -127,28 +127,28 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Markup",
+        header: "",
         icon: <FontAwesomeIcon icon={faHtml5} style={{ fontSize: "5rem" }} />,
         subtitle: "HTML",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Style Sheet",
+        header: "",
         icon: <FontAwesomeIcon icon={faCss3Alt} style={{ fontSize: "5rem" }} />,
         subtitle: "CSS",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Style Sheet",
+        header: "",
         icon: <FontAwesomeIcon icon={faSass} style={{ fontSize: "5rem" }} />,
         subtitle: "SASS",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Query",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -168,7 +168,7 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Scripting",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -190,21 +190,21 @@ const SkillCards: React.FC = () => {
     ],
     platforms: [
       {
-        header: "Runtime",
+        header: "",
         icon: <FontAwesomeIcon icon={faNode} style={{ fontSize: "5rem" }} />,
         subtitle: "Node.Js",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Runtime",
+        header: "",
         icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
         subtitle: "JRE/JDK",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Engine",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -224,7 +224,7 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Engine",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -244,14 +244,14 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "AWS",
+        header: "",
         icon: <FontAwesomeIcon icon={faAws} style={{ fontSize: "5rem" }} />,
-        subtitle: "Amazon Web Services",
+        subtitle: "AWS",
         desc: "",
         buttonText: "",
       },
       {
-        header: "IBM Cloud",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -273,7 +273,7 @@ const SkillCards: React.FC = () => {
     ],
     frameworks: [
       {
-        header: "Express.Js",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -288,12 +288,12 @@ const SkillCards: React.FC = () => {
             ex
           </Typography>
         ),
-        subtitle: "Framework",
+        subtitle: "Express.Js",
         desc: "",
         buttonText: "",
       },
       {
-        header: "NestJS",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -308,12 +308,12 @@ const SkillCards: React.FC = () => {
             NestJS
           </Typography>
         ),
-        subtitle: "Framework",
+        subtitle: "NestJS",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Ruby on Rails",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -328,19 +328,19 @@ const SkillCards: React.FC = () => {
             Rails
           </Typography>
         ),
-        subtitle: "Framework",
+        subtitle: "Ruby on Rails",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Spring Boot",
+        header: "",
         icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
-        subtitle: "Framework",
+        subtitle: "Spring Boot",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Jest",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -355,44 +355,44 @@ const SkillCards: React.FC = () => {
             Jest
           </Typography>
         ),
-        subtitle: "Framework",
+        subtitle: "Jest",
         desc: "",
         buttonText: "",
       },
       {
-        header: "RESTful API",
+        header: "",
         icon: (
           <FontAwesomeIcon icon={faCloudsmith} style={{ fontSize: "5rem" }} />
         ),
-        subtitle: "API Development",
+        subtitle: "RESTful API",
         desc: "",
         buttonText: "",
       },
     ],
     devops: [
       {
-        header: "GitHub",
+        header: "",
         icon: <FontAwesomeIcon icon={faGithub} style={{ fontSize: "5rem" }} />,
-        subtitle: "Version Control",
+        subtitle: "GitHub",
         desc: "",
         buttonText: "",
       },
       {
-        header: "GitHub Actions",
+        header: "",
         icon: <FontAwesomeIcon icon={faGit} style={{ fontSize: "5rem" }} />,
-        subtitle: "CI/CD Automation",
+        subtitle: "GitHub Actions",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Docker",
+        header: "",
         icon: <FontAwesomeIcon icon={faDocker} style={{ fontSize: "5rem" }} />,
-        subtitle: "Containerization",
+        subtitle: "Docker",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Kubernetes",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -407,12 +407,12 @@ const SkillCards: React.FC = () => {
             Kubernetes
           </Typography>
         ),
-        subtitle: "Containerization",
+        subtitle: "Kubernetes",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Terraform",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -427,47 +427,47 @@ const SkillCards: React.FC = () => {
             Terraform
           </Typography>
         ),
-        subtitle: "IaC Tool",
+        subtitle: "Terraform",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Postman",
+        header: "",
         icon: (
           <FontAwesomeIcon
             icon={faTelegramPlane}
             style={{ fontSize: "5rem" }}
           />
         ),
-        subtitle: "API Testing",
+        subtitle: "Postman",
         desc: "",
         buttonText: "",
       },
     ],
     libraries: [
       {
-        header: "React",
+        header: "",
         icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
-        subtitle: "Library",
+        subtitle: "React",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Redux",
+        header: "",
         icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
-        subtitle: "State Management",
+        subtitle: "Redux",
         desc: "",
         buttonText: "",
       },
       {
-        header: "React Router",
+        header: "",
         icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
-        subtitle: "Client-side Routing",
+        subtitle: "React Router",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Axios",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -482,12 +482,12 @@ const SkillCards: React.FC = () => {
             Axios
           </Typography>
         ),
-        subtitle: "HTTP Client",
+        subtitle: "Axios",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Passport.js",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -502,12 +502,12 @@ const SkillCards: React.FC = () => {
             Passport.js
           </Typography>
         ),
-        subtitle: "Auth Middleware",
+        subtitle: "Passport.js",
         desc: "",
         buttonText: "",
       },
       {
-        header: "bcrypt",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -522,12 +522,12 @@ const SkillCards: React.FC = () => {
             bcrypt
           </Typography>
         ),
-        subtitle: "Password Hashing",
+        subtitle: "bcrypt",
         desc: "",
         buttonText: "",
       },
       {
-        header: "dotenv",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -542,12 +542,12 @@ const SkillCards: React.FC = () => {
             dotenv
           </Typography>
         ),
-        subtitle: "Var Management",
+        subtitle: "dotenv",
         desc: "",
         buttonText: "",
       },
       {
-        header: "ESLint",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -562,12 +562,12 @@ const SkillCards: React.FC = () => {
             ESLint
           </Typography>
         ),
-        subtitle: "Linting Tool",
+        subtitle: "ESLint",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Prettier",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -582,12 +582,12 @@ const SkillCards: React.FC = () => {
             Prettier
           </Typography>
         ),
-        subtitle: "Code Formatter",
+        subtitle: "Prettier",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Material UI",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -602,23 +602,23 @@ const SkillCards: React.FC = () => {
             MUI
           </Typography>
         ),
-        subtitle: "UI Component",
+        subtitle: "MUI",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Bootstrap",
+        header: "",
         icon: (
           <FontAwesomeIcon icon={faBootstrap} style={{ fontSize: "5rem" }} />
         ),
-        subtitle: "UI/UX",
+        subtitle: "Bootstrap",
         desc: "",
         buttonText: "",
       },
     ],
     databases: [
       {
-        header: "Databases",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -633,12 +633,12 @@ const SkillCards: React.FC = () => {
             NoSQL
           </Typography>
         ),
-        subtitle: "NoSQL Databases",
+        subtitle: "NoSQL",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Databases",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -658,7 +658,7 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Databases",
+        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -678,7 +678,7 @@ const SkillCards: React.FC = () => {
         buttonText: "",
       },
       {
-        header: "Databases",
+        header: "",
         icon: (
           <Typography
             variant="h5"
