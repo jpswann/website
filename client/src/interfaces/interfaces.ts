@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface CardProps {
+export interface SkillCardProps {
   header: string;
   icon: ReactNode;
   subtitle: string;
@@ -8,14 +8,19 @@ export interface CardProps {
   buttonText: string;
 }
 
-export interface CardItem {
-  frameworks: CardProps[];
-  languages: CardProps[];
-  libraries: CardProps[];
-  platforms: CardProps[];
-  devops: CardProps[];
-  databases: CardProps[];
-  apis: CardProps[];
-  cloud: CardProps[];
-  testing: CardProps[];
+export interface HomeCardProps {
+  title: string;
+  text: string;
+}
+
+export interface SkillCardItem {
+  frameworks: SkillCardProps[];
+  languages: SkillCardProps[];
+  libraries: SkillCardProps[];
+  platforms: SkillCardProps[];
+  devops: SkillCardProps[];
+  databases: SkillCardProps[];
+  apis: SkillCardProps[];
+  cloud: SkillCardProps[];
+  testing: SkillCardProps[];
 }

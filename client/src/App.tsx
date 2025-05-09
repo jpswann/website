@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SkillsPage from "./pages/SkillsPage";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import "../src/css/Global.css";
@@ -8,6 +7,7 @@ import {
   responsiveFontSizes,
   ThemeProvider,
 } from "@mui/material/styles";
+import { Box } from "@mui/material";
 
 function App() {
   let theme = createTheme();
@@ -15,12 +15,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/technicialskills" element={<SkillsPage />} />
-        </Routes>
-      </Router>
+      <Box className="container">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </Box>
     </ThemeProvider>
   );
 }

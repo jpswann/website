@@ -3,10 +3,10 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { CardProps } from "../interfaces/interfaces";
+import { SkillCardProps } from "../interfaces/interfaces";
 import { Card, Box } from "@mui/material";
 
-const BasicCard: React.FC<CardProps> = ({
+const BasicCard: React.FC<SkillCardProps> = ({
   header,
   icon,
   subtitle,
