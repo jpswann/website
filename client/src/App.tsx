@@ -15,7 +15,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
-      <Box className="container">
+      <Box
+        sx={{
+          px: { xs: 0, sm: 4, md: 6 },
+          py: { xs: 10, sm: 10, md: 12 },
+        }}
+      >
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />

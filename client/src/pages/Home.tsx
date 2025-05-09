@@ -1,11 +1,4 @@
-import {
-  Box,
-  Typography,
-  Button,
-  Container,
-  Grid,
-  IconButton,
-} from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import HomeCards from "../components/HomeCards";
 import SkillCards from "../components/SkillCards";
 import About from "../components/About";
@@ -13,18 +6,16 @@ import About from "../components/About";
 const HomePage = () => {
   return (
     <>
-      <Box sx={{ textAlign: "center", mb: 6 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
+      <Box sx={{ textAlign: "center" }}>
+        <Typography variant="h2" component="h1">
           Welcome to My Developer Portfolio
         </Typography>
-        <Typography variant="h6" color="textSecondary" paragraph>
+        <Typography variant="h6" color="textSecondary">
           Building clean, scalable, and modern applications with React, Node.js,
           and more.
         </Typography>
-      </Box>
-      <Container>
         <HomeCards />
-      </Container>
+      </Box>
 
       <About />
 

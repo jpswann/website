@@ -25,6 +25,7 @@ const Navbar: React.FC = () => {
                     sm: "44px",
                     md: "54px",
                   },
+                  mt: 0.5,
                 }}
               />
             </a>

@@ -29,28 +29,24 @@ const HomeCards: React.FC = () => {
     },
   ];
   return (
-    <Grid container spacing={4}>
-      {cards.map((card, index) => (
-        <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }} display="flex">
-          <Card
-            sx={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <CardContent sx={{ flexGrow: 1 }}>
-              <Typography variant="h5" gutterBottom>
-                {card.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {card.text}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      ))}
-    </Grid>
+    <Container maxWidth="lg" sx={{ mt: 6, mb: 6 }}>
+      <Grid container spacing={4}>
+        {cards.map((card, index) => (
+          <Grid key={index} size={{ xs: 12, sm: 12, md: 4 }} display="flex">
+            <Card>
+              <CardContent sx={{ flexGrow: 1 }}>
+                <Typography variant="h5" gutterBottom>
+                  {card.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {card.text}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 

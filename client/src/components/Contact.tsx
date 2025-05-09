@@ -32,7 +32,7 @@ const Contact: React.FC<Props> = () => {
 
   return (
     <>
-      <Box sx={{ px: 4, mb: 4, pt: 6 }}>
+      <Box component="form" onSubmit={handleSubmit}>
         <Typography variant="h4" gutterBottom>
           Contact me
         </Typography>
@@ -41,9 +41,7 @@ const Contact: React.FC<Props> = () => {
             Thank you! Your message has been sent.
           </Alert>
         )}
-      </Box>
 
-      <Box component="form" onSubmit={handleSubmit} sx={{ px: 4 }}>
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, sm: 6 }}>
             <TextField

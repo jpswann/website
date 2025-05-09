@@ -4,12 +4,7 @@ import Contact from "./Contact";
 
 const About: React.FC = () => {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        py: 10,
-      }}
-    >
+    <Box sx={{ py: 4 }}>
       <Grid container spacing={2} justifyContent="center">
         <Grid
           size={{ xs: 12, md: 6 }}
@@ -20,23 +15,13 @@ const About: React.FC = () => {
             px: { xs: 2, sm: 4 },
           }}
         >
-          <Box sx={{ mb: 4 }}>
-            <Typography
-              variant="h2"
-              sx={{ textAlign: { xs: "center", md: "left" } }}
-            >
-              About
-            </Typography>
-          </Box>
-          <Box sx={{ mb: 4 }}>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.2rem",
-                lineHeight: 1.8,
-                textAlign: { xs: "center", md: "left" },
-              }}
-            >
+          <Typography
+            variant="h2"
+            sx={{ textAlign: { xs: "center", md: "left" } }}
+          >
+            About
+            <Typography variant="body1">
+              <br />
               Hello! I’m Jason, a full stack developer with a passion for
               building elegant, scalable web applications. I specialize in
               React, Node.js, and modern cloud infrastructure, and I love
@@ -47,11 +32,10 @@ const About: React.FC = () => {
               experimenting with new technologies, and spending time outdoors.
               Let’s build something great together.
             </Typography>
-          </Box>
+          </Typography>
           <Contact />
         </Grid>
 
-        {/* Image on Right */}
         <Grid
           size={{ xs: 12, md: 4 }}
           sx={{

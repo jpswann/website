@@ -711,7 +711,7 @@ const SkillCards: React.FC = () => {
   ];
 
   return (
-    <Box>
+    <Box sx={{ py: 2 }}>
       <Box className="title">
         <Typography variant="h2">Technical Skills</Typography>
       </Box>
@@ -723,7 +723,7 @@ const SkillCards: React.FC = () => {
             </Typography>
             <Grid container spacing={2} sx={{ mb: 5 }}>
               {Cards[key].map((card, i) => (
-                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 2 }} key={i}>
+                <Grid size={{ xs: 6, sm: 6, md: 4, lg: 3, xl: 2 }} key={i}>
                   <Card
                     header={card.header}
                     icon={card.icon}
