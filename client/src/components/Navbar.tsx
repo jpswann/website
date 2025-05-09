@@ -13,6 +13,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import "../css/Navbar.css";
 
 const navLinks = ["About", "Projects", "Contact"];
 
@@ -24,7 +25,7 @@ const Navbar: React.FC = () => {
   const toggleDrawer = () => setOpen(!open);
 
   const drawerContent = (
-    <Box sx={{ width: 250 }} onClick={toggleDrawer}>
+    <Box className="drawer-content" onClick={toggleDrawer}>
       <List>
         {navLinks.map((text) => (
           <ListItem component="button" key={text}>
@@ -37,16 +38,9 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <AppBar
-        position="static"
-        sx={{
-          backgroundColor: "transparent",
-          boxShadow: "none",
-          color: "black",
-        }}
-      >
+      <AppBar position="static" className="appbar">
         <Toolbar>
-          <Box sx={{ flexGrow: 1, display: "flex" }}>
+          <Box className="icon">
             <a href="/">
               <img src="js.png" alt="JPSwann" width="54px" />
             </a>

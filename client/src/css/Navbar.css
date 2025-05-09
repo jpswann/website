@@ -1,0 +1,14 @@
+.drawer-content {
+  width: 250px;
+}
+
+.appbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: black !important;
+}
+
+.icon {
+  flex-grow: 1;
+  display: flex;
+}
