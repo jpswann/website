@@ -7,14 +7,35 @@ const Navbar: React.FC = () => {
   return (
     <>
       <AppBar position="fixed" className="appbar">
-        <Toolbar className="justify-content">
+        <Toolbar
+          className="justify-content"
+          sx={{
+            px: { xs: 1, sm: 2, md: 4 },
+          }}
+        >
           <Box className="icon">
             <a href="/">
-              <img src="js.png" alt="JPSwann" width="54px" />
+              <Box
+                component="img"
+                src="js.png"
+                alt="JPSwann"
+                sx={{
+                  width: {
+                    xs: "36px",
+                    sm: "44px",
+                    md: "54px",
+                  },
+                }}
+              />
             </a>
           </Box>
 
-          <Box className="center-icons">
+          <Box
+            className="center-icons"
+            sx={{
+              gap: { xs: 0.5, sm: 1, md: 2 },
+            }}
+          >
             <IconButton
               aria-label="GitHub"
               href="https://github.com/jpswann?tab=repositories"
@@ -49,6 +70,13 @@ const Navbar: React.FC = () => {
             target="_blank"
             download
             className="button"
+            sx={{
+              height: { xs: 36, sm: 42 },
+              fontSize: { xs: "0.75rem", sm: "0.875rem" },
+              px: { xs: 1, sm: 2 },
+              display: "flex",
+              gap: 1,
+            }}
           >
             <Box className="button-content">
               Resume
