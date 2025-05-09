@@ -20,7 +20,4 @@ export interface SkillCardItem {
   platforms: SkillCardProps[];
   devops: SkillCardProps[];
   databases: SkillCardProps[];
-  apis: SkillCardProps[];
-  cloud: SkillCardProps[];
-  testing: SkillCardProps[];
 }

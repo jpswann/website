@@ -27,7 +27,7 @@ const SkillCards: React.FC = () => {
     languages: [
       {
         header: "Programing",
-        icon: <FontAwesomeIcon icon={faJs} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faJs} style={{ fontSize: "5rem" }} />,
         subtitle: "JavaScript",
         desc: "",
         buttonText: "",
@@ -36,10 +36,10 @@ const SkillCards: React.FC = () => {
         header: "Programing",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -54,14 +54,14 @@ const SkillCards: React.FC = () => {
       },
       {
         header: "Programing",
-        icon: <FontAwesomeIcon icon={faPython} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faPython} style={{ fontSize: "5rem" }} />,
         subtitle: "Python",
         desc: "",
         buttonText: "",
       },
       {
         header: "Programing",
-        icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
         subtitle: "Java",
         desc: "",
         buttonText: "",
@@ -70,10 +70,10 @@ const SkillCards: React.FC = () => {
         header: "Programing",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -90,10 +90,10 @@ const SkillCards: React.FC = () => {
         header: "Programing",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -110,10 +110,10 @@ const SkillCards: React.FC = () => {
         header: "Programing",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -128,21 +128,21 @@ const SkillCards: React.FC = () => {
       },
       {
         header: "Markup",
-        icon: <FontAwesomeIcon icon={faHtml5} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faHtml5} style={{ fontSize: "5rem" }} />,
         subtitle: "HTML",
         desc: "",
         buttonText: "",
       },
       {
         header: "Style Sheet",
-        icon: <FontAwesomeIcon icon={faCss3Alt} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faCss3Alt} style={{ fontSize: "5rem" }} />,
         subtitle: "CSS",
         desc: "",
         buttonText: "",
       },
       {
         header: "Style Sheet",
-        icon: <FontAwesomeIcon icon={faSass} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faSass} style={{ fontSize: "5rem" }} />,
         subtitle: "SASS",
         desc: "",
         buttonText: "",
@@ -151,10 +151,10 @@ const SkillCards: React.FC = () => {
         header: "Query",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -171,10 +171,10 @@ const SkillCards: React.FC = () => {
         header: "Scripting",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -191,14 +191,14 @@ const SkillCards: React.FC = () => {
     platforms: [
       {
         header: "Runtime",
-        icon: <FontAwesomeIcon icon={faNode} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faNode} style={{ fontSize: "5rem" }} />,
         subtitle: "Node.Js",
         desc: "",
         buttonText: "",
       },
       {
         header: "Runtime",
-        icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
         subtitle: "JRE/JDK",
         desc: "",
         buttonText: "",
@@ -207,10 +207,10 @@ const SkillCards: React.FC = () => {
         header: "Engine",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -227,10 +227,10 @@ const SkillCards: React.FC = () => {
         header: "Engine",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -243,16 +243,43 @@ const SkillCards: React.FC = () => {
         desc: "",
         buttonText: "",
       },
+      {
+        header: "AWS",
+        icon: <FontAwesomeIcon icon={faAws} style={{ fontSize: "5rem" }} />,
+        subtitle: "Amazon Web Services",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "IBM Cloud",
+        icon: (
+          <Typography
+            variant="h5"
+            sx={{
+              height: "5rem",
+              width: "5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            IBM Cloud
+          </Typography>
+        ),
+        subtitle: "IBM Cloud",
+        desc: "",
+        buttonText: "",
+      },
     ],
     frameworks: [
       {
-        header: "Framework",
+        header: "Express.Js",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -261,18 +288,18 @@ const SkillCards: React.FC = () => {
             ex
           </Typography>
         ),
-        subtitle: "Express.Js",
+        subtitle: "Framework",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Framework",
+        header: "NestJS",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -281,18 +308,18 @@ const SkillCards: React.FC = () => {
             NestJS
           </Typography>
         ),
-        subtitle: "NestJS",
+        subtitle: "Framework",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Framework",
+        header: "Ruby on Rails",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -301,14 +328,43 @@ const SkillCards: React.FC = () => {
             Rails
           </Typography>
         ),
-        subtitle: "Ruby on Rails",
+        subtitle: "Framework",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Framework",
-        icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "8rem" }} />,
-        subtitle: "Spring Boot",
+        header: "Spring Boot",
+        icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
+        subtitle: "Framework",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Jest",
+        icon: (
+          <Typography
+            variant="h5"
+            sx={{
+              height: "5rem",
+              width: "5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Jest
+          </Typography>
+        ),
+        subtitle: "Framework",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "RESTful API",
+        icon: (
+          <FontAwesomeIcon icon={faCloudsmith} style={{ fontSize: "5rem" }} />
+        ),
+        subtitle: "API Development",
         desc: "",
         buttonText: "",
       },
@@ -316,33 +372,33 @@ const SkillCards: React.FC = () => {
     devops: [
       {
         header: "GitHub",
-        icon: <FontAwesomeIcon icon={faGithub} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faGithub} style={{ fontSize: "5rem" }} />,
         subtitle: "Version Control",
         desc: "",
         buttonText: "",
       },
       {
         header: "GitHub Actions",
-        icon: <FontAwesomeIcon icon={faGit} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faGit} style={{ fontSize: "5rem" }} />,
         subtitle: "CI/CD Automation",
         desc: "",
         buttonText: "",
       },
       {
         header: "Docker",
-        icon: <FontAwesomeIcon icon={faDocker} style={{ fontSize: "8rem" }} />,
+        icon: <FontAwesomeIcon icon={faDocker} style={{ fontSize: "5rem" }} />,
         subtitle: "Containerization",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Container Orchestration",
+        header: "Kubernetes",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -351,18 +407,18 @@ const SkillCards: React.FC = () => {
             Kubernetes
           </Typography>
         ),
-        subtitle: "Container Orchestration",
+        subtitle: "Containerization",
         desc: "",
         buttonText: "",
       },
       {
-        header: "IaC Tool",
+        header: "Terraform",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -371,41 +427,53 @@ const SkillCards: React.FC = () => {
             Terraform
           </Typography>
         ),
-        subtitle: "Terraform",
+        subtitle: "IaC Tool",
+        desc: "",
+        buttonText: "",
+      },
+      {
+        header: "Postman",
+        icon: (
+          <FontAwesomeIcon
+            icon={faTelegramPlane}
+            style={{ fontSize: "5rem" }}
+          />
+        ),
+        subtitle: "API Testing",
         desc: "",
         buttonText: "",
       },
     ],
     libraries: [
       {
-        header: "Library",
-        icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "8rem" }} />,
-        subtitle: "React",
+        header: "React",
+        icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
+        subtitle: "Library",
         desc: "",
         buttonText: "",
       },
       {
-        header: "State Management",
-        icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "8rem" }} />,
-        subtitle: "Redux",
+        header: "Redux",
+        icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
+        subtitle: "State Management",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Client-side Routing",
-        icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "8rem" }} />,
-        subtitle: "React Router",
+        header: "React Router",
+        icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
+        subtitle: "Client-side Routing",
         desc: "",
         buttonText: "",
       },
       {
-        header: "HTTP Client",
+        header: "Axios",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -414,18 +482,18 @@ const SkillCards: React.FC = () => {
             Axios
           </Typography>
         ),
-        subtitle: "Axios",
+        subtitle: "HTTP Client",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Auth Middleware",
+        header: "Passport.js",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -434,18 +502,18 @@ const SkillCards: React.FC = () => {
             Passport.js
           </Typography>
         ),
-        subtitle: "Passport.js",
+        subtitle: "Auth Middleware",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Password Hashing",
+        header: "bcrypt",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -454,18 +522,18 @@ const SkillCards: React.FC = () => {
             bcrypt
           </Typography>
         ),
-        subtitle: "bcrypt",
+        subtitle: "Password Hashing",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Variable Management",
+        header: "dotenv",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -474,18 +542,18 @@ const SkillCards: React.FC = () => {
             dotenv
           </Typography>
         ),
-        subtitle: "bcrypt",
+        subtitle: "Var Management",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Linting Tool",
+        header: "ESLint",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -494,18 +562,18 @@ const SkillCards: React.FC = () => {
             ESLint
           </Typography>
         ),
-        subtitle: "ESLint",
+        subtitle: "Linting Tool",
         desc: "",
         buttonText: "",
       },
       {
-        header: "Code Formatter",
+        header: "Prettier",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -514,18 +582,18 @@ const SkillCards: React.FC = () => {
             Prettier
           </Typography>
         ),
-        subtitle: "Prettier",
+        subtitle: "Code Formatter",
         desc: "",
         buttonText: "",
       },
       {
-        header: "UI Component",
+        header: "Material UI",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -534,16 +602,16 @@ const SkillCards: React.FC = () => {
             MUI
           </Typography>
         ),
-        subtitle: "Material UI",
+        subtitle: "UI Component",
         desc: "",
         buttonText: "",
       },
       {
-        header: "UI/UX",
+        header: "Bootstrap",
         icon: (
-          <FontAwesomeIcon icon={faBootstrap} style={{ fontSize: "8rem" }} />
+          <FontAwesomeIcon icon={faBootstrap} style={{ fontSize: "5rem" }} />
         ),
-        subtitle: "Bootstrap",
+        subtitle: "UI/UX",
         desc: "",
         buttonText: "",
       },
@@ -553,10 +621,10 @@ const SkillCards: React.FC = () => {
         header: "Databases",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -573,10 +641,10 @@ const SkillCards: React.FC = () => {
         header: "Databases",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -593,10 +661,10 @@ const SkillCards: React.FC = () => {
         header: "Databases",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -613,10 +681,10 @@ const SkillCards: React.FC = () => {
         header: "Databases",
         icon: (
           <Typography
-            variant="h3"
+            variant="h5"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "5rem",
+              width: "5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -626,80 +694,6 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "PostgreSQL",
-        desc: "",
-        buttonText: "",
-      },
-    ],
-    apis: [
-      {
-        header: "API Development",
-        icon: (
-          <FontAwesomeIcon icon={faCloudsmith} style={{ fontSize: "8rem" }} />
-        ),
-        subtitle: "RESTful API",
-        desc: "",
-        buttonText: "",
-      },
-    ],
-    cloud: [
-      {
-        header: "AWS",
-        icon: <FontAwesomeIcon icon={faAws} style={{ fontSize: "8rem" }} />,
-        subtitle: "Amazon Web Services",
-        desc: "",
-        buttonText: "",
-      },
-      {
-        header: "IBM Cloud",
-        icon: (
-          <Typography
-            variant="h3"
-            sx={{
-              height: "8rem",
-              width: "8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            IBM Cloud
-          </Typography>
-        ),
-        subtitle: "IBM Cloud",
-        desc: "",
-        buttonText: "",
-      },
-    ],
-    testing: [
-      {
-        header: "Postman",
-        icon: (
-          <FontAwesomeIcon
-            icon={faTelegramPlane}
-            style={{ fontSize: "8rem" }}
-          />
-        ),
-        subtitle: "API Testing",
-        desc: "",
-        buttonText: "",
-      },
-      {
-        header: "Jest",
-        icon: (
-          <Typography
-            variant="h3"
-            sx={{
-              height: "8rem",
-              width: "8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            Jest
-          </Typography>
-        ),
-        subtitle: "JavaScript Testing Framework",
         desc: "",
         buttonText: "",
       },
@@ -714,25 +708,22 @@ const SkillCards: React.FC = () => {
     "devops",
     "libraries",
     "databases",
-    "apis",
-    "cloud",
-    "testing",
   ];
 
   return (
-    <Box sx={{ py: 8, backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
+    <Box>
       <Box className="title">
         <Typography variant="h2">Technical Skills</Typography>
       </Box>
       <Container>
         {categories.map((key) => (
           <React.Fragment key={key}>
-            <Typography variant="h4" sx={{ mb: 3 }}>
+            <Typography variant="h5" sx={{ mb: 3 }}>
               {key.charAt(0).toUpperCase() + key.slice(1)}
             </Typography>
-            <Grid container spacing={3} sx={{ mb: 5 }}>
+            <Grid container spacing={2} sx={{ mb: 5 }}>
               {Cards[key].map((card, i) => (
-                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
+                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 2 }} key={i}>
                   <Card
                     header={card.header}
                     icon={card.icon}

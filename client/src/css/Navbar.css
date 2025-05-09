@@ -3,12 +3,23 @@
 }
 
 .appbar {
-  background-color: transparent !important;
+  background-color: white !important;
   box-shadow: none !important;
   color: black !important;
 }
 
 .icon {
-  flex-grow: 1;
   display: flex;
+  align-items: center;
+}
+
+.center-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
