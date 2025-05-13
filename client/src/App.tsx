@@ -12,6 +12,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
+import Education from "./pages/Education";
 
 function App() {
   let theme = createTheme();
@@ -31,6 +32,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/education" element={<Education />} />
           </Routes>
         </Box>
         <Footer />

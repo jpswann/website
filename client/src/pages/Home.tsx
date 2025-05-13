@@ -6,7 +6,12 @@ const HomePage = () => {
   return (
     <>
       <Box sx={{ textAlign: "center", mb: 2, mt: 2 }}>
-        <Typography variant="h2" component="h1">
+        <Typography
+          variant="h2"
+          sx={{
+            fontSize: { xs: "2.5rem", md: "3.75rem" },
+          }}
+        >
           Welcome to My Developer Portfolio
         </Typography>
         <Typography variant="h6" color="textSecondary">

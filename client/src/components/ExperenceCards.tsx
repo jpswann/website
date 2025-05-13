@@ -18,6 +18,20 @@ const ExperienceCards: React.FC = () => {
       body: "At JRI-America Inc., I worked as a Software Developer on client-facing web applications and services, playing a key role in a large-scale cash management system that required frequent client communication. I built proprietary software for internal banking operations, supporting functions from portfolio management to compliance. I contributed in an Agile environment, focusing on writing clean, scalable Java code aligned with enterprise development standards.",
     },
     {
+      icon: "/iab.png",
+      alt: "International Advertising Bureau",
+      title: "International Advertising Bureau",
+      date: "Summer 2016",
+      body: "IT Support Center Technician/Software Engineer Intern.",
+    },
+    {
+      icon: "/ldeo.png",
+      alt: "Lamont-Doherty Earth Observatory",
+      title: "Lamont-Doherty Earth Observatory",
+      date: "Oct 2014 - Mar 2015",
+      body: "Biology/Paleo Environment Project Assistant.",
+    },
+    {
       icon: "/navy.png",
       alt: "United States Navy",
       title: "Information System Technician at United States Navy",
@@ -32,7 +46,7 @@ const ExperienceCards: React.FC = () => {
           key={index}
           sx={{
             width: { xs: "100%", sm: "90%", md: "80%" },
-            minHeight: 100,
+            minHeight: 177,
             height: { xs: "auto" },
             display: "flex",
             flexDirection: "column",
@@ -42,8 +56,9 @@ const ExperienceCards: React.FC = () => {
           <CardContent sx={{ flexGrow: 1 }}>
             <Box
               display="flex"
+              flexDirection={{ xs: "column", sm: "row" }}
               justifyContent="space-between"
-              alignItems="center"
+              alignItems={{ xs: "flex-start", sm: "center" }}
               sx={{ mb: 2 }}
             >
               <Typography
@@ -52,6 +67,10 @@ const ExperienceCards: React.FC = () => {
                 sx={{
                   display: "flex",
                   gap: 4,
+                  fontSize: {
+                    xs: "1.25rem",
+                    sm: "1.5rem",
+                  },
                 }}
               >
                 <Box
@@ -62,9 +81,20 @@ const ExperienceCards: React.FC = () => {
                 />{" "}
                 {card.title}
               </Typography>
-              <Typography variant="body2">{card.date}</Typography>
+              <Typography variant="body2" sx={{ whiteSpace: "nowrap" }}>
+                {card.date}
+              </Typography>
             </Box>
-            <Typography variant="body1" color="text.secondary">
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{
+                fontSize: {
+                  xs: "0.9rem",
+                  sm: "1rem",
+                },
+              }}
+            >
               {card.body}
             </Typography>
           </CardContent>

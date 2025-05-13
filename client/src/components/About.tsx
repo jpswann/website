@@ -20,7 +20,15 @@ const About: React.FC = () => {
             sx={{ textAlign: { xs: "center", md: "left" } }}
           >
             About
-            <Typography variant="body1">
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: {
+                  xs: "0.9rem",
+                  sm: "1rem",
+                },
+              }}
+            >
               <br />
               Hello! I’m Jason, a full stack developer with a passion for
               building elegant, scalable web applications. I specialize in
