@@ -1,11 +1,12 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import HomeCards from "../components/HomeCards";
 import ActionAreaCard from "../components/ActionAreaCard";
+import ActionAreaCards from "../components/ActionAreaCards";
 
 const HomePage = () => {
   return (
     <>
-      <Box sx={{ textAlign: "center", marginBottom: "2rem" }}>
+      <Box sx={{ textAlign: "center", mb: 2, mt: 2 }}>
         <Typography variant="h2" component="h1">
           Welcome to My Developer Portfolio
         </Typography>
@@ -23,54 +24,9 @@ const HomePage = () => {
         >
           Explore Projects
         </Button>
-
-        <HomeCards />
       </Box>
-      <Box sx={{ marginLeft: "1.4rem", marginTop: "2rem" }}>
-        <Grid
-          container
-          spacing={13}
-          sx={{ columnGap: 0 }}
-          justifyContent="center"
-        >
-          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-            <ActionAreaCard
-              img="/profile2.jpg"
-              alt="About"
-              title="About"
-              body="Learn more about my background, development journey, and what drives me as a developer."
-              link="/about"
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-            <ActionAreaCard
-              img="/profile.jpg"
-              alt="Skills"
-              title="Skills"
-              body="Explore the tools, technologies, and frameworks I use to build fast, responsive, and scalable web applications."
-              link="/about"
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-            <ActionAreaCard
-              img="/profile.jpg"
-              alt="JPSwann"
-              title="Experience"
-              body="A quick look at my professional journey—projects, roles, and the impact I’ve made as a developer across teams and tech stacks."
-              link="/experience"
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-            <ActionAreaCard
-              img="/profile.jpg"
-              alt="JPSwann"
-              title="Education"
-              body="Explore my academic background, including degrees, certifications, and the institutions that shaped my foundation in software development."
-              link="/education"
-            />
-          </Grid>
-        </Grid>
-      </Box>
+      <HomeCards />
+      <ActionAreaCards />
     </>
   );
 };

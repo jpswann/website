@@ -13,6 +13,14 @@ export interface HomeCardProps {
   text: string;
 }
 
+export interface ActionAreaCardProps {
+  img: string;
+  alt: string;
+  title: string;
+  body: string;
+  link: string;
+}
+
 export interface SkillCardItem {
   frameworks: SkillCardProps[];
   languages: SkillCardProps[];

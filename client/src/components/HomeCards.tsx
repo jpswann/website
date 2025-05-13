@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Grid, Typography } from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 import { HomeCardProps } from "../interfaces/interfaces";
 
 const HomeCards: React.FC = () => {
@@ -29,24 +29,39 @@ const HomeCards: React.FC = () => {
     },
   ];
   return (
-    <Container maxWidth="lg" sx={{ mt: 6, mb: 6 }}>
-      <Grid container spacing={4}>
-        {cards.map((card, index) => (
-          <Grid key={index} size={{ xs: 12, sm: 12, md: 4 }} display="flex">
-            <Card>
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h5" gutterBottom>
-                  {card.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {card.text}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+    <Grid
+      container
+      maxWidth="lg"
+      spacing={2}
+      size={{ xs: 12, sm: 12, md: 4 }}
+      sx={{ mt: 6, mb: 6 }}
+      justifyContent="center"
+      textAlign="center"
+      justifySelf="center"
+    >
+      {cards.map((card, index) => (
+        <Card
+          key={index}
+          sx={{
+            width: "100%",
+            maxWidth: 345,
+            minHeight: 100,
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <CardContent sx={{ flexGrow: 1 }}>
+            <Typography variant="h5" gutterBottom>
+              {card.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {card.text}
+            </Typography>
+          </CardContent>
+        </Card>
+      ))}
+    </Grid>
   );
 };
 

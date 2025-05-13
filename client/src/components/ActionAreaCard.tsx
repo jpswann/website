@@ -23,7 +23,12 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
 }) => {
   return (
     <Card
-      sx={{ width: 345, height: 450, display: "flex", flexDirection: "column" }}
+      sx={{
+        width: { xs: "100%", sm: 350 },
+        height: { xs: "auto", sm: 450 },
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
       <Link to={link} style={{ textDecoration: "none" }}>
         <CardActionArea>
