@@ -30,7 +30,11 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
         flexDirection: "column",
       }}
     >
-      <Link to={link} style={{ textDecoration: "none" }}>
+      <Link
+        to={link}
+        style={{ textDecoration: "none" }}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <CardActionArea>
           <CardMedia component="img" height="300" image={img} alt={alt} />
           <CardContent>

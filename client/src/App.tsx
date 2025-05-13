@@ -9,8 +9,9 @@ import {
 } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import About from "./components/About";
-import SkillCards from "./components/SkillCards";
 import Footer from "./components/Footer";
+import Skills from "./pages/Skills";
+import Experience from "./pages/Experience";
 
 function App() {
   let theme = createTheme();
@@ -28,7 +29,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<SkillCards />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/experience" element={<Experience />} />
           </Routes>
         </Box>
         <Footer />

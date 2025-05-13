@@ -8,6 +8,14 @@ export interface SkillCardProps {
   buttonText: string;
 }
 
+export interface ExperenceCardProps {
+  icon: string;
+  alt: string;
+  title: string;
+  date: string;
+  body: string;
+}
+
 export interface HomeCardProps {
   title: string;
   text: string;

@@ -10,13 +10,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import {
-  Download,
-  GitHub,
-  LinkedIn,
-  Twitter,
-  Menu as MenuIcon,
-} from "@mui/icons-material";
+import { Download, Menu as MenuIcon } from "@mui/icons-material";
 import "../css/Navbar.css";
 import { Link } from "react-router-dom";
 
@@ -38,7 +32,10 @@ const Navbar: React.FC = () => {
           }}
         >
           <Box className="icon">
-            <a href="/">
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               <Box
                 component="img"
                 src="js.png"
@@ -52,7 +49,7 @@ const Navbar: React.FC = () => {
                   mt: 0.5,
                 }}
               />
-            </a>
+            </Link>
           </Box>
 
           {/* Mobile Menu Icon */}
@@ -76,16 +73,36 @@ const Navbar: React.FC = () => {
               flexGrow: 1,
             }}
           >
-            <Button color="inherit" component={Link} to="/about">
+            <Button
+              color="inherit"
+              component={Link}
+              to="/about"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               About
             </Button>
-            <Button color="inherit" component={Link} to="/skills">
+            <Button
+              color="inherit"
+              component={Link}
+              to="/skills"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Skills
             </Button>
-            <Button color="inherit" component={Link} to="/experience">
+            <Button
+              color="inherit"
+              component={Link}
+              to="/experience"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Experience
             </Button>
-            <Button color="inherit" component={Link} to="/education">
+            <Button
+              color="inherit"
+              component={Link}
+              to="/education"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Education
             </Button>
           </Box>

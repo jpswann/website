@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Box, Grid } from "@mui/material";
+import { Container, Typography, Grid } from "@mui/material";
 import Card from "./Card";
 import { SkillCardItem } from "../interfaces/interfaces";
 import {
@@ -711,33 +711,28 @@ const SkillCards: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: 2 }}>
-      <Box className="title">
-        <Typography variant="h2">Technical Skills</Typography>
-      </Box>
-      <Container>
-        {categories.map((key) => (
-          <React.Fragment key={key}>
-            <Typography variant="h5" sx={{ mb: 3 }}>
-              {key.charAt(0).toUpperCase() + key.slice(1)}
-            </Typography>
-            <Grid container spacing={2} sx={{ mb: 5 }}>
-              {Cards[key].map((card, i) => (
-                <Grid size={{ xs: 6, sm: 6, md: 4, lg: 3, xl: 2 }} key={i}>
-                  <Card
-                    header={card.header}
-                    icon={card.icon}
-                    subtitle={card.subtitle}
-                    desc={card.desc}
-                    buttonText={card.buttonText}
-                  />
-                </Grid>
-              ))}
-            </Grid>
-          </React.Fragment>
-        ))}
-      </Container>
-    </Box>
+    <Container>
+      {categories.map((key) => (
+        <React.Fragment key={key}>
+          <Typography variant="h5" sx={{ mb: 3 }}>
+            {key.charAt(0).toUpperCase() + key.slice(1)}
+          </Typography>
+          <Grid container spacing={2} sx={{ mb: 5 }}>
+            {Cards[key].map((card, i) => (
+              <Grid size={{ xs: 6, sm: 6, md: 4, lg: 3, xl: 2 }} key={i}>
+                <Card
+                  header={card.header}
+                  icon={card.icon}
+                  subtitle={card.subtitle}
+                  desc={card.desc}
+                  buttonText={card.buttonText}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </React.Fragment>
+      ))}
+    </Container>
   );
 };
 

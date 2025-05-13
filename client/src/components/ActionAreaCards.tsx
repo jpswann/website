@@ -5,7 +5,7 @@ import { ActionAreaCardProps } from "../interfaces/interfaces";
 
 interface Props {}
 
-const ActionAreaCards: React.FC<Props> = ({}) => {
+const ActionAreaCards: React.FC<Props> = () => {
   const cards: ActionAreaCardProps[] = [
     {
       img: "/profile2.jpg",
