@@ -8,7 +8,7 @@ import {
   ThemeProvider,
 } from "@mui/material/styles";
 import { Box } from "@mui/material";
-import About from "./components/About";
+import About from "./pages/About";
 import Footer from "./components/Footer";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";

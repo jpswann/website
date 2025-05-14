@@ -15,7 +15,7 @@ const Education: React.FC = () => {
       <Box sx={{ py: 2 }}>
         <Box
           component="img"
-          src="/columbia.jpg"
+          src="/src/assets/columbia.jpg"
           alt="Education"
           sx={{
             width: "100%",
@@ -45,7 +45,7 @@ const Education: React.FC = () => {
           >
             <Box
               component="img"
-              src="/CULogo.png"
+              src="/src/assets/CULogo.png"
               alt="Education"
               sx={{
                 width: { xs: 100, sm: 150 },

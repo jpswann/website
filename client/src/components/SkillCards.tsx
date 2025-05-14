@@ -24,6 +24,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import "../css/SkillsPage.css";
 
+library.add(fab);
+
 const SkillCards: React.FC = () => {
   const Cards: SkillCardItem = {
     languages: [

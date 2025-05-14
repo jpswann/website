@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext", "es2015"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -9,8 +10,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,

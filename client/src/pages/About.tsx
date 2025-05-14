@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
-import Contact from "./Contact";
+import Contact from "../components/Contact";
 
 const About: React.FC = () => {
   return (
@@ -55,7 +55,7 @@ const About: React.FC = () => {
         >
           <Box
             component="img"
-            src="/profile.jpg"
+            src="/src/assets/profile.jpg"
             alt="JPSwann"
             sx={{
               width: { xs: "200px", sm: "100%", md: "100%" },
