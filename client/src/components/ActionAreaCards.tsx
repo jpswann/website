@@ -8,28 +8,28 @@ interface Props {}
 const ActionAreaCards: React.FC<Props> = () => {
   const cards: ActionAreaCardProps[] = [
     {
-      img: "/src/assets/profile2.jpg",
+      img: "/src/assets/actionCards/about.jpg",
       alt: "About",
       title: "About",
       body: "Learn more about my background, development journey, and what drives me as a developer.",
       link: "/about",
     },
     {
-      img: "/src/assets/profile2.jpg",
+      img: "/src/assets/actionCards/skills.jpg",
       alt: "Skills",
       title: "Skills",
       body: "Explore the tools, technologies, and frameworks I use to build fast, responsive, and scalable web applications.",
       link: "/skills",
     },
     {
-      img: "/src/assets/profile2.jpg",
+      img: "/src/assets/actionCards/experience.jpg",
       alt: "Experience",
       title: "Experience",
       body: "A quick look at my professional journey—projects, roles, and the impact I’ve made as a developer across teams and tech stacks.",
       link: "/experience",
     },
     {
-      img: "/src/assets/profile2.jpg",
+      img: "/src/assets/actionCards/education.jpg",
       alt: "Education",
       title: "Education",
       body: "Explore my academic background, including degrees, certifications, and the institutions that shaped my foundation in software development.",

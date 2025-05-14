@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
             >
               <Box
                 component="img"
-                src="/src/assets/js.png"
+                src="/src/assets/logos/js.png"
                 alt="JPSwann"
                 sx={{
                   width: {

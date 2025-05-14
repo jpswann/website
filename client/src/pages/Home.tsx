@@ -22,8 +22,8 @@ const HomePage = () => {
             mb: 2,
             mx: { xs: "1rem" },
             fontSize: {
-              xs: ".9rem",
-              sm: "1.15rem",
+              xs: ".5rem",
+              sm: ".9rem",
             },
           }}
         >
