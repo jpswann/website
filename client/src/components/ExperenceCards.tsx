@@ -61,30 +61,44 @@ const ExperienceCards: React.FC = () => {
               alignItems={{ xs: "flex-start", sm: "center" }}
               sx={{ mb: 2 }}
             >
-              <Typography
-                variant="h5"
-                gutterBottom
-                sx={{
-                  display: "flex",
-                  gap: 4,
-                  fontSize: {
-                    xs: "1.25rem",
-                    sm: "1.5rem",
-                  },
-                }}
-              >
+              {/* Left: Icon and Title */}
+              <Box display="flex" alignItems="center" gap={2}>
                 <Box
                   component="img"
                   src={card.icon}
                   alt={card.alt}
-                  sx={{ width: 40, height: 40, objectFit: "contain", mr: 1 }}
-                />{" "}
-                {card.title}
-              </Typography>
-              <Typography variant="body2" sx={{ whiteSpace: "nowrap" }}>
+                  sx={{ width: 40, height: 40, objectFit: "contain" }}
+                />
+                <Typography
+                  variant="h5"
+                  gutterBottom
+                  sx={{
+                    alignItems: "center",
+                    mt: 1,
+                    fontSize: {
+                      xs: "1.25rem",
+                      sm: "1.5rem",
+                    },
+                  }}
+                >
+                  {card.title}
+                </Typography>
+              </Box>
+
+              {/* Right: Date */}
+              <Typography
+                variant="body2"
+                sx={{
+                  mt: { xs: 1, sm: 0 },
+                  ml: { xs: 0, sm: 2 },
+                  whiteSpace: "nowrap",
+                  alignSelf: { xs: "flex-start", sm: "normal" },
+                }}
+              >
                 {card.date}
               </Typography>
             </Box>
+
             <Typography
               variant="body1"
               color="text.secondary"

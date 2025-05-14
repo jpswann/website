@@ -14,10 +14,26 @@ const HomePage = () => {
         >
           Welcome to My Developer Portfolio
         </Typography>
-        <Typography variant="h6" color="textSecondary">
+        <Typography
+          variant="h6"
+          color="text.secondary"
+          textAlign="center"
+          sx={{
+            mb: 2,
+            mx: { xs: "1rem" },
+            fontSize: {
+              xs: ".9rem",
+              sm: "1.15rem",
+            },
+          }}
+        >
+          Software Engineer | Full Stack | Client Relation Management | Project
+          Management | DB Management
+        </Typography>
+        {/* <Typography variant="h6" color="textSecondary">
           Building clean, scalable, and modern applications with React, Node.js,
           and more.
-        </Typography>
+        </Typography> */}
         <br />
         <Button
           variant="contained"

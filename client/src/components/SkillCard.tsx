@@ -6,13 +6,7 @@ import Typography from "@mui/material/Typography";
 import { SkillCardProps } from "../interfaces/interfaces";
 import { Card, Box } from "@mui/material";
 
-const BasicCard: React.FC<SkillCardProps> = ({
-  header,
-  icon,
-  subtitle,
-  desc,
-  buttonText,
-}) => {
+const SkillCard: React.FC<SkillCardProps> = ({ icon, subtitle }) => {
   return (
     <Card
       sx={{
@@ -31,28 +25,16 @@ const BasicCard: React.FC<SkillCardProps> = ({
             alignItems: "center",
           }}
         >
-          <Typography
-            gutterBottom
-            sx={{ color: "text.secondary", fontSize: 14 }}
-          >
-            {header}
-          </Typography>
           <Typography variant="h5" component="div">
             {icon}
           </Typography>
           <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
             {subtitle}
           </Typography>
-          <Typography variant="body2">{desc}</Typography>
         </Box>
       </CardContent>
-      {buttonText && (
-        <CardActions sx={{ justifyContent: "center" }}>
-          <Button size="small">{buttonText}</Button>
-        </CardActions>
-      )}
     </Card>
   );
 };
 
-export default BasicCard;
+export default SkillCard;

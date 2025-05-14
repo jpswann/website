@@ -4,7 +4,7 @@ import Contact from "./Contact";
 
 const About: React.FC = () => {
   return (
-    <Box sx={{ py: 4 }}>
+    <Box sx={{ py: 2 }}>
       <Grid container spacing={2} justifyContent="center">
         <Grid
           size={{ xs: 12, md: 6 }}

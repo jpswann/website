@@ -24,7 +24,7 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
   return (
     <Card
       sx={{
-        width: { xs: "100%", sm: 350 },
+        width: { xs: "100%", sm: 300, xl: 350 },
         height: { xs: "auto", sm: 450 },
         display: "flex",
         flexDirection: "column",

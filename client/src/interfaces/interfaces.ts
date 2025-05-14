@@ -1,11 +1,8 @@
 import { ReactNode } from "react";
 
 export interface SkillCardProps {
-  header: string;
   icon: ReactNode;
   subtitle: string;
-  desc: string;
-  buttonText: string;
 }
 
 export interface ExperenceCardProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Typography, Grid } from "@mui/material";
-import Card from "./Card";
+import Card from "./SkillCard";
 import { SkillCardItem } from "../interfaces/interfaces";
 import {
   faAws,
@@ -20,20 +20,23 @@ import {
   faTelegramPlane,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 import "../css/SkillsPage.css";
 
 const SkillCards: React.FC = () => {
   const Cards: SkillCardItem = {
     languages: [
       {
-        header: "",
-        icon: <FontAwesomeIcon icon={faJs} style={{ fontSize: "5rem" }} />,
+        icon: (
+          <FontAwesomeIcon
+            icon={["fab", "github"]}
+            style={{ fontSize: "5rem" }}
+          />
+        ),
         subtitle: "JavaScript",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -49,25 +52,16 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "TypeScript",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faPython} style={{ fontSize: "5rem" }} />,
         subtitle: "Python",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
         subtitle: "Java",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -83,11 +77,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Ruby",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -103,11 +94,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "C++",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -123,32 +111,20 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "C#",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faHtml5} style={{ fontSize: "5rem" }} />,
         subtitle: "HTML",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faCss3Alt} style={{ fontSize: "5rem" }} />,
         subtitle: "CSS",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faSass} style={{ fontSize: "5rem" }} />,
         subtitle: "SASS",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -164,11 +140,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "SQL",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -184,27 +157,18 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Bash/Shell Script",
-        desc: "",
-        buttonText: "",
       },
     ],
     platforms: [
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faNode} style={{ fontSize: "5rem" }} />,
         subtitle: "Node.Js",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
         subtitle: "JRE/JDK",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -220,11 +184,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "V8",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -240,18 +201,12 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Nginx",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faAws} style={{ fontSize: "5rem" }} />,
         subtitle: "AWS",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -267,13 +222,10 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "IBM Cloud",
-        desc: "",
-        buttonText: "",
       },
     ],
     frameworks: [
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -289,11 +241,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Express.Js",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -309,11 +258,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "NestJS",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -329,18 +275,12 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Ruby on Rails",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faJava} style={{ fontSize: "5rem" }} />,
         subtitle: "Spring Boot",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -356,43 +296,28 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Jest",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <FontAwesomeIcon icon={faCloudsmith} style={{ fontSize: "5rem" }} />
         ),
         subtitle: "RESTful API",
-        desc: "",
-        buttonText: "",
       },
     ],
     devops: [
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faGithub} style={{ fontSize: "5rem" }} />,
         subtitle: "GitHub",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faGit} style={{ fontSize: "5rem" }} />,
         subtitle: "GitHub Actions",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faDocker} style={{ fontSize: "5rem" }} />,
         subtitle: "Docker",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -408,11 +333,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Kubernetes",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -428,11 +350,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Terraform",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <FontAwesomeIcon
             icon={faTelegramPlane}
@@ -440,34 +359,22 @@ const SkillCards: React.FC = () => {
           />
         ),
         subtitle: "Postman",
-        desc: "",
-        buttonText: "",
       },
     ],
     libraries: [
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
         subtitle: "React",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
         subtitle: "Redux",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: <FontAwesomeIcon icon={faReact} style={{ fontSize: "5rem" }} />,
         subtitle: "React Router",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -483,11 +390,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Axios",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -503,11 +407,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Passport.js",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -523,11 +424,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "bcrypt",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -543,11 +441,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "dotenv",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -563,11 +458,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "ESLint",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -583,11 +475,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "Prettier",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -603,22 +492,16 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "MUI",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <FontAwesomeIcon icon={faBootstrap} style={{ fontSize: "5rem" }} />
         ),
         subtitle: "Bootstrap",
-        desc: "",
-        buttonText: "",
       },
     ],
     databases: [
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -634,11 +517,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "NoSQL",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -654,11 +534,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "MongoDB",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -674,11 +551,8 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "DB2",
-        desc: "",
-        buttonText: "",
       },
       {
-        header: "",
         icon: (
           <Typography
             variant="h5"
@@ -694,8 +568,6 @@ const SkillCards: React.FC = () => {
           </Typography>
         ),
         subtitle: "PostgreSQL",
-        desc: "",
-        buttonText: "",
       },
     ],
   };
@@ -720,13 +592,7 @@ const SkillCards: React.FC = () => {
           <Grid container spacing={2} sx={{ mb: 5 }}>
             {Cards[key].map((card, i) => (
               <Grid size={{ xs: 6, sm: 6, md: 4, lg: 3, xl: 2 }} key={i}>
-                <Card
-                  header={card.header}
-                  icon={card.icon}
-                  subtitle={card.subtitle}
-                  desc={card.desc}
-                  buttonText={card.buttonText}
-                />
+                <Card icon={card.icon} subtitle={card.subtitle} />
               </Grid>
             ))}
           </Grid>

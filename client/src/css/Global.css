@@ -26,6 +26,16 @@ html {
   background-color: #333333 !important;
 }
 
+#links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#links a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
 .button:hover {
   background-color: #595959 !important;
 }

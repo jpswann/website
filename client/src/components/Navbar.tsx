@@ -76,6 +76,14 @@ const Navbar: React.FC = () => {
             <Button
               color="inherit"
               component={Link}
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              Home
+            </Button>
+            <Button
+              color="inherit"
+              component={Link}
               to="/about"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
