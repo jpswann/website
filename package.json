@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rimraf server/dist && cd server && npx tsc",
     "server": "nodemon ts-node server/src/index.js",
-    "client": "npm start --prefix client",
+    "client": "npm run dev --prefix client",
     "predev": "npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },

@@ -13,31 +13,36 @@ import Footer from "./components/Footer";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Education from "./pages/Education";
+import { LoadingProvider } from "./helpers/LoadingContext";
+import GlobalLoadingOverlay from "./helpers/GlobalLoadingOverlay";
 
 function App() {
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <Navbar />
-        <Box
-          sx={{
-            px: { xs: 0, sm: 4, md: 6 },
-            py: { xs: 10, sm: 10, md: 12 },
-          }}
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/education" element={<Education />} />
-          </Routes>
-        </Box>
-        <Footer />
-      </ThemeProvider>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <LoadingProvider>
+        <GlobalLoadingOverlay />
+        <Router>
+          <Navbar />
+          <Box
+            sx={{
+              px: { xs: 0, sm: 4, md: 6 },
+              py: { xs: 10, sm: 10, md: 12 },
+            }}
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/education" element={<Education />} />
+            </Routes>
+          </Box>
+          <Footer />
+        </Router>
+      </LoadingProvider>
+    </ThemeProvider>
   );
 }
 

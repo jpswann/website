@@ -1,8 +1,10 @@
-import { ReactNode } from "react";
+import { IconName } from "@fortawesome/fontawesome-svg-core";
 
 export interface SkillCardProps {
-  icon: ReactNode;
+  icon?: IconName;
   subtitle: string;
+  text?: string;
+  type: string;
 }
 
 export interface ExperenceCardProps {
@@ -24,13 +26,4 @@ export interface ActionAreaCardProps {
   title: string;
   body: string;
   link: string;
-}
-
-export interface SkillCardItem {
-  frameworks: SkillCardProps[];
-  languages: SkillCardProps[];
-  libraries: SkillCardProps[];
-  platforms: SkillCardProps[];
-  devops: SkillCardProps[];
-  databases: SkillCardProps[];
 }
