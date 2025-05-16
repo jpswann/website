@@ -23,7 +23,7 @@ const Education: React.FC = () => {
             width: "100%",
             height: 400,
             objectFit: "cover",
-            objectPosition: "center",
+            objectPosition: "100% center",
             borderRadius: 2,
             boxShadow: 3,
             mb: 2,
