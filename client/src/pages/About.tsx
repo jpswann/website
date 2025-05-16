@@ -49,13 +49,13 @@ const About: React.FC = () => {
             <br />
             <br />
             Outside of work, I stay connected to my roots by volunteering at my
-            local American Legion Post 16 in Shelton, CT, where I support fellow
-            veterans and help organize community events. Giving back to the
-            veteran community is an important part of my life and values. In my
-            free time, I enjoy being outdoors—whether I’m playing a round of
-            disc golf, hiking local trails, or experimenting with new hot sauce
-            recipes in my kitchen. These hobbies keep me grounded, creative, and
-            constantly learning in and out of the tech world.
+            local American Legion, where I support fellow veterans and help
+            organize community events. Giving back to the veteran community is
+            an important part of my life and values. In my free time, I enjoy
+            being outdoors—whether I’m playing a round of disc golf, hiking
+            local trails, or experimenting with new hot sauce recipes in my
+            kitchen. These hobbies keep me grounded, creative, and constantly
+            learning in and out of the tech world.
           </Typography>
         </Typography>
         <Contact />
