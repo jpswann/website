@@ -13,6 +13,7 @@ import {
 import { Download, Menu as MenuIcon } from "@mui/icons-material";
 import "../css/Navbar.css";
 import { Link } from "react-router-dom";
+import jsLogo from "../assets/logos/js.png";
 
 const Navbar: React.FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -38,7 +39,7 @@ const Navbar: React.FC = () => {
             >
               <Box
                 component="img"
-                src="/src/assets/logos/js.png"
+                src={jsLogo}
                 alt="JPSwann"
                 sx={{
                   width: {
