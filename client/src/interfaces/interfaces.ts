@@ -4,7 +4,6 @@ export interface SkillCardProps {
   icon?: IconName;
   subtitle: string;
   text?: string;
-  type: string;
 }
 
 export interface ExperenceCardProps {
