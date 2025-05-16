@@ -27,8 +27,8 @@ const HomePage = () => {
             },
           }}
         >
-          Software Engineer | Full Stack | Client Relation Management | Project
-          Management | DB Management
+          Navy Veterian | Software Engineer | Full Stack | Client Relation
+          Management | Project Management | DB Management
         </Typography>
         {/* <Typography variant="h6" color="textSecondary">
           Building clean, scalable, and modern applications with React, Node.js,
