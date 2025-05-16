@@ -14,6 +14,7 @@ import { Download, Menu as MenuIcon } from "@mui/icons-material";
 import "../css/Navbar.css";
 import { Link } from "react-router-dom";
 import jsLogo from "../assets/logos/js.png";
+import JPSwann from "../assets/JPSwann.pdf";
 
 const Navbar: React.FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -119,7 +120,7 @@ const Navbar: React.FC = () => {
           {/* Resume button */}
           <Button
             variant="contained"
-            href="/JPSwann.pdf"
+            href={JPSwann}
             target="_blank"
             download
             className="button"
