@@ -8,6 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import columbiaImg from "../assets/columbia.jpeg";
+import cuLogo from "../assets/logos/CULogo.png";
 
 const Education: React.FC = () => {
   return (
@@ -15,7 +17,7 @@ const Education: React.FC = () => {
       <Box sx={{ py: 2 }}>
         <Box
           component="img"
-          src="/src/assets/columbia.jpeg"
+          src={columbiaImg}
           alt="Education"
           sx={{
             width: "100%",
@@ -45,7 +47,7 @@ const Education: React.FC = () => {
           >
             <Box
               component="img"
-              src="/src/assets/logos/CULogo.png"
+              src={cuLogo}
               alt="Education"
               sx={{
                 width: { xs: 100, sm: 150 },

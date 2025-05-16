@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import Contact from "../components/Contact";
+import profilePic from "../assets/profile.jpg";
 
 const About: React.FC = () => {
   return (
@@ -71,7 +72,7 @@ const About: React.FC = () => {
       >
         <Box
           component="img"
-          src="/src/assets/profile.jpg"
+          src={profilePic}
           alt="JPSwann"
           sx={{
             width: { xs: "200px", sm: "100%", md: "100%" },
