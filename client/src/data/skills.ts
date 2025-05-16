@@ -1,28 +1,14 @@
 import { SkillCardProps } from "../interfaces/interfaces";
 
 export const skills: Record<string, SkillCardProps[]> = {
-  platform: [
-    { subtitle: "AWS", icon: "aws" },
-    { subtitle: "IBM Cloud", text: "IBM" },
-    { subtitle: "JRE/JDK", icon: "java" },
+  ["top 5"]: [
+    { subtitle: "JavaScript", icon: "js" },
     { subtitle: "Node.Js", icon: "node" },
-    { subtitle: "Nginx", text: "Nginx" },
-    { subtitle: "V8", text: "V8" },
-  ],
-  library: [
-    { subtitle: "Axios", text: "Axios" },
-    { subtitle: "Bootstrap", icon: "bootstrap" },
-    { subtitle: "ESLint", text: "ESLint" },
-    { subtitle: "MUI", text: "Material UI" },
-    { subtitle: "Passport.js", text: "Passport.js" },
-    { subtitle: "Prettier", text: "Prettier" },
+    { subtitle: "Express.Js", text: "ex" },
     { subtitle: "React", icon: "react" },
-    { subtitle: "React Router", icon: "react" },
-    { subtitle: "Redux", icon: "react" },
-    { subtitle: "bcrypt", text: "bcrypt" },
-    { subtitle: "dotenv", text: "dotenv" },
+    { subtitle: "SQL", text: "SQL" },
   ],
-  language: [
+  languages: [
     { subtitle: "Bash/Shell Script", text: "Bash/Shell" },
     { subtitle: "C#", text: "C#" },
     { subtitle: "C++", text: "C++" },
@@ -36,11 +22,34 @@ export const skills: Record<string, SkillCardProps[]> = {
     { subtitle: "SQL", text: "SQL" },
     { subtitle: "TypeScript", text: "TS" },
   ],
-  database: [
-    { subtitle: "DB2", text: "DB2" },
-    { subtitle: "MongoDB", text: "MongoDB" },
-    { subtitle: "NoSQL", text: "NoSQL" },
-    { subtitle: "PostgreSQL", text: "PostgreSQL" },
+  frameworks: [
+    { subtitle: "Express.Js", text: "ex" },
+    { subtitle: "Jest", text: "Jest" },
+    { subtitle: "NextJS", text: "NextJS" },
+    { subtitle: "RESTful API", icon: "cloudsmith" },
+    { subtitle: "Ruby on Rails", text: "Rails" },
+    { subtitle: "Spring Boot", icon: "java" },
+  ],
+  libraries: [
+    { subtitle: "Axios", text: "Axios" },
+    { subtitle: "Bootstrap", icon: "bootstrap" },
+    { subtitle: "ESLint", text: "ESLint" },
+    { subtitle: "MUI", text: "Material UI" },
+    { subtitle: "Passport.js", text: "Passport.js" },
+    { subtitle: "Prettier", text: "Prettier" },
+    { subtitle: "React", icon: "react" },
+    { subtitle: "React Router", icon: "react" },
+    { subtitle: "Redux", icon: "react" },
+    { subtitle: "bcrypt", text: "bcrypt" },
+    { subtitle: "dotenv", text: "dotenv" },
+  ],
+  platforms: [
+    { subtitle: "AWS", icon: "aws" },
+    { subtitle: "IBM Cloud", text: "IBM" },
+    { subtitle: "JRE/JDK", icon: "java" },
+    { subtitle: "Node.Js", icon: "node" },
+    { subtitle: "Nginx", text: "Nginx" },
+    { subtitle: "V8", text: "V8" },
   ],
   devops: [
     { subtitle: "Docker", icon: "docker" },
@@ -50,12 +59,10 @@ export const skills: Record<string, SkillCardProps[]> = {
     { subtitle: "Postman", icon: "telegram-plane" },
     { subtitle: "Terraform", text: "Terraform" },
   ],
-  framework: [
-    { subtitle: "Express.Js", text: "ex" },
-    { subtitle: "Jest", text: "Jest" },
-    { subtitle: "NextJS", text: "NextJS" },
-    { subtitle: "RESTful API", icon: "cloudsmith" },
-    { subtitle: "Ruby on Rails", text: "Rails" },
-    { subtitle: "Spring Boot", icon: "java" },
+  databases: [
+    { subtitle: "DB2", text: "DB2" },
+    { subtitle: "MongoDB", text: "MongoDB" },
+    { subtitle: "NoSQL", text: "NoSQL" },
+    { subtitle: "PostgreSQL", text: "PostgreSQL" },
   ],
 };
