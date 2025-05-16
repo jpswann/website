@@ -46,3 +46,4 @@ coverage/
 *.log
 
 package-lock.json
+resume-kp.pem
