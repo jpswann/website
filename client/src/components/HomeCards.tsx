@@ -33,7 +33,6 @@ const HomeCards: React.FC = () => {
       container
       maxWidth="lg"
       spacing={2}
-      size={{ xs: 12, sm: 12, md: 4 }}
       sx={{ mt: 6, mb: 6 }}
       justifyContent="center"
       textAlign="center"

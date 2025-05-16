@@ -41,12 +41,7 @@ const ActionAreaCards: React.FC<Props> = () => {
     },
   ];
   return (
-    <Grid
-      container
-      justifyContent="center"
-      gap={4}
-      size={{ xs: 12, sm: 6, md: 3 }}
-    >
+    <Grid container justifyContent="center" gap={4}>
       {cards.map((card, idx) => (
         <ActionAreaCard
           key={idx}
