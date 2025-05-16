@@ -10,21 +10,12 @@ const ExperienceCards: React.FC = () => {
           sx={{
             width: { xs: "100%", sm: "90%", md: "80%" },
             minHeight: 177,
-            height: { xs: "auto" },
-            display: "flex",
-            flexDirection: "column",
             mb: 6,
           }}
         >
           <CardContent sx={{ flexGrow: 1 }}>
-            <Box
-              display="flex"
-              flexDirection={{ xs: "column", sm: "row" }}
-              justifyContent="space-between"
-              alignItems={{ xs: "flex-start", sm: "center" }}
-              sx={{ mb: 2 }}
-            >
-              <Box display="flex" alignItems="center" gap={2}>
+            <Box display="flex" justifyContent="space-between" sx={{ mb: 2 }}>
+              <Box display="flex" gap={2}>
                 <Box
                   component="img"
                   src={card.icon}
@@ -35,7 +26,6 @@ const ExperienceCards: React.FC = () => {
                   variant="h5"
                   gutterBottom
                   sx={{
-                    alignItems: "center",
                     mt: 1,
                     fontSize: {
                       xs: "1.25rem",
