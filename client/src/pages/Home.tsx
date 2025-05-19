@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
-import HomeCards from "../components/HomeCards";
-import ActionAreaCards from "../components/ActionAreaCards";
+import HomeCards from "../components/cards/HomeCards";
+import ActionAreaCards from "../components/cards/ActionAreaCards";
 
 const HomePage = () => {
   return (

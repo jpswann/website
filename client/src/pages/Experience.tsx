@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import ExperienceCards from "../components/ExperenceCards";
+import ExperienceCards from "../components/cards/ExperenceCards";
 
 interface Props {}
 

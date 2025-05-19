@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import ActionAreaCard from "./ActionAreaCard";
-import { cards } from "../data/actionarea";
+import { cards } from "../../data/actionarea";
 
 const ActionAreaCards: React.FC = () => {
   return (

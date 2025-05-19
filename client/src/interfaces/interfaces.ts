@@ -17,6 +17,7 @@ export interface ExperenceCardProps {
 export interface HomeCardProps {
   title: string;
   text: string;
+  link?: string;
 }
 
 export interface ActionAreaCardProps {

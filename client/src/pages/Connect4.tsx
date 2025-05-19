@@ -1,10 +1,7 @@
-import React from "react";
-import SkillCards from "../components/cards/SkillCards";
 import { Box, Typography } from "@mui/material";
+import Connect4Board from "../components/frontend/connect4/Board";
 
-interface Props {}
-
-const Skills: React.FC<Props> = () => {
+const Connect4 = () => {
   return (
     <Box sx={{ py: 2 }}>
       <Box className="title">
@@ -14,12 +11,12 @@ const Skills: React.FC<Props> = () => {
             fontSize: { xs: "2.5rem", md: "3.75rem" },
           }}
         >
-          Technical Skills
+          Connect 4
         </Typography>
       </Box>
-      <SkillCards />
+      <Connect4Board />
     </Box>
   );
 };
 
-export default Skills;
+export default Connect4;

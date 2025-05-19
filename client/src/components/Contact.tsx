@@ -1,5 +1,6 @@
 import { Alert, Box, Button, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 interface Props {}
 
@@ -21,13 +22,23 @@ const Contact: React.FC<Props> = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm({
-      f_name: "",
-      l_name: "",
-      email: "",
-      message: "",
-    });
+
+    emailjs
+      .send(
+        "service_xi76y9m", // e.g. service_xxx
+        "template_7d1l0qo", // e.g. template_xxx
+        form,
+        "t6mjgDKHYHEJGgZRX" // e.g. public key
+      )
+      .then(
+        (result) => {
+          setSubmitted(true);
+          setForm({ f_name: "", l_name: "", email: "", message: "" });
+        },
+        (error) => {
+          console.error(error.text);
+        }
+      );
   };
 
   return (

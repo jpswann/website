@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
-import { cards } from "../data/experience";
+import { cards } from "../../data/experience";
 
 const ExperienceCards: React.FC = () => {
   return (

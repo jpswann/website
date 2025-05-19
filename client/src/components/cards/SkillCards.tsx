@@ -3,8 +3,8 @@ import { Container, Typography, Grid, Box } from "@mui/material";
 import Card from "./SkillCard";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { skills } from "../data/skills";
-import "../css/SkillsPage.css";
+import { skills } from "../../data/skills";
+import "../../css/SkillsPage.css";
 
 library.add(fab);
 
