@@ -16,6 +16,7 @@ import Experience from "./pages/Experience";
 import Education from "./pages/Education";
 import Frontend from "./pages/Frontend";
 import Connect4 from "./pages/Connect4";
+import ComingSoon from "./components/ComingSoon";
 
 function App() {
   let theme = createTheme();
@@ -40,6 +41,12 @@ function App() {
             <Route path="/education" element={<Education />} />
             <Route path="/frontend" element={<Frontend />} />
             <Route path="/frontend/connect4" element={<Connect4 />} />
+            <Route path="/backend" element={<ComingSoon />} />
+            <Route path="/dbdesign" element={<ComingSoon />} />
+            <Route path="/devops" element={<ComingSoon />} />
+            <Route path="/dbdesign" element={<ComingSoon />} />
+            <Route path="/security" element={<ComingSoon />} />
+            <Route path="/qa" element={<ComingSoon />} />
           </Routes>
         </Box>
         <Footer />
