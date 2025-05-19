@@ -21,6 +21,22 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
   body,
   link,
 }) => {
+  const isExternal = /^https?:\/\//i.test(link);
+
+  const content = (
+    <CardActionArea>
+      <CardMedia component="img" height="300" image={img} alt={alt} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          {body}
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  );
+
   return (
     <Card
       sx={{
@@ -29,23 +45,24 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
         flexDirection: "column",
       }}
     >
-      <Link
-        to={link}
-        style={{ textDecoration: "none" }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      >
-        <CardActionArea>
-          <CardMedia component="img" height="300" image={img} alt={alt} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {title}
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              {body}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Link>
+      {isExternal ? (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none" }}
+        >
+          {content}
+        </a>
+      ) : (
+        <Link
+          to={link}
+          style={{ textDecoration: "none" }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          {content}
+        </Link>
+      )}
     </Card>
   );
 };

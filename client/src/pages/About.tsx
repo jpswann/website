@@ -36,16 +36,16 @@ const About: React.FC = () => {
             }}
           >
             <br />
-            I'm a U.S. Navy veteran with a strong foundation in discipline,
-            problem-solving, and high-pressure operations. After completing my
-            service, I earned my degree from Columbia University, where I
-            deepened my understanding of computer science and technology. Since
-            then, I’ve built a career as a software developer, specializing in
-            building scalable, efficient applications across a variety of
-            platforms. With hands-on experience in both front-end and back-end
-            development, I bring a mission-driven mindset to every project,
-            always striving to deliver clean, maintainable code and innovative
-            solutions.
+            Hi, my name is Jason Swann. I'm a U.S. Navy veteran with a strong
+            foundation in discipline, problem-solving, and high-pressure
+            operations. After completing my service, I earned my degree from
+            Columbia University, where I deepened my understanding of computer
+            science and technology. Since then, I’ve built a career as a
+            software developer, specializing in building scalable, efficient
+            applications across a variety of platforms. With hands-on experience
+            in both front-end and back-end development, I bring a mission-driven
+            mindset to every project, always striving to deliver clean,
+            maintainable code and innovative solutions.
             <br />
             <br />
             Outside of work, I stay connected to my roots by volunteering at my
