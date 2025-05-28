@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { Box, Button, Grid, TextField } from "@mui/material";
 import { Message } from "../interfaces/interfaces";
 import { SYSTEM_MESSAGE } from "../data/chatbotSystemMessage";
+import { getOrCreateSessionId } from "../utils/session";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -11,11 +12,13 @@ const Chatbot = () => {
   const [isSending, setIsSending] = useState(false);
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
+  const [sessionId] = useState(getOrCreateSessionId());
 
   useEffect(() => {
     const setRoles = async () => {
       try {
         const response = await axios.post("/api/chatbot", {
+          sessionId: sessionId,
           messages: [SYSTEM_MESSAGE],
         });
 
@@ -51,7 +54,9 @@ const Chatbot = () => {
     setInput("");
 
     try {
+      console.log("sessionId: ", sessionId);
       const response = await axios.post("/api/chatbot", {
+        sessionId: sessionId,
         messages: updatedMessages,
       });
 

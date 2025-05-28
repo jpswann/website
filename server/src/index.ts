@@ -1,9 +1,8 @@
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
-import userRoutes from "./routes/userRoutes";
-import skillRoutes from "./routes/skillRoutes";
 import chatRoutes from "./routes/chatRoutes";
+import { createClient } from "redis";
 
 dotenv.config();
 
@@ -13,10 +12,28 @@ const PORT = 8000;
 app.use(cors());
 app.use(express.json());
 
-// app.use("/api/users", userRoutes);
-// app.use("/api/skills", skillRoutes);
-app.use("/api/chatbot", chatRoutes);
+const redisClient = createClient();
 
-app.listen(PORT, () => {
-  console.log(`server listening on http://localhost:${PORT}`);
+redisClient.on("error", (err) => {
+  console.error("Redis Client Error", err);
 });
+
+async function startServer() {
+  try {
+    await redisClient.connect();
+    console.log("Connected to Redis");
+
+    app.locals.redisClient = redisClient;
+
+    app.use("/api/chatbot", chatRoutes);
+
+    app.listen(PORT, () => {
+      console.log(`Server listening on http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to connect to Redis:", error);
+    process.exit(1);
+  }
+}
+
+startServer();
