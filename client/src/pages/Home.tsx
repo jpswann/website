@@ -54,7 +54,7 @@ const HomePage = () => {
           Personal Assistant:
         </Typography>
       </Box>
-      <Chatbot />
+      {/* <Chatbot /> */}
     </>
   );
 };
