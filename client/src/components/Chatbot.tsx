@@ -54,7 +54,6 @@ const Chatbot = () => {
     setInput("");
 
     try {
-      console.log("sessionId: ", sessionId);
       const response = await axios.post("/api/chatbot", {
         sessionId: sessionId,
         messages: updatedMessages,
