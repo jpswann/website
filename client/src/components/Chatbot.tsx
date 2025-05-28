@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import { Box, Button, Grid, TextField } from "@mui/material";
 import { Message } from "../interfaces/interfaces";
+import { SYSTEM_MESSAGE } from "../data/chatbotSystemMessage";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -10,20 +11,6 @@ const Chatbot = () => {
   const [isSending, setIsSending] = useState(false);
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
-
-  const SYSTEM_MESSAGE: Message = {
-    role: "system",
-    content: `You are a helpful assistant designed to answer questions about Jason's resume, technical background, work experience, and personal projects.
-  Your responsibilities include:
-  
-  1. **Technical Background:** Explaining Jason's skills in JavaScript/Typescript, React, Node.js, Express, and Relational Databases.
-  2. **Project Insights:** Describing technical projects like his Portfolio Chatbot Assistant using RabbitMQ, or scaling systems for millions of concurrent users.
-  3. **Career Journey:** Sharing details about Jason's experience at IBM Cloud and his time in the Navy, including achievements like setting up a secure network while deployed.
-  4. **Portfolio Guidance:** Helping users navigate and understand the structure, goals, and technologies behind Jason's portfolio site.
-  5. **Soft Skills:** Highlighting Jason’s mentorship experience, problem-solving abilities, and communication strengths.
-  
-  If a user asks a question outside of Jason’s background, politely redirect them to focus on Jason’s portfolio or resume.`,
-  };
 
   useEffect(() => {
     const setRoles = async () => {
