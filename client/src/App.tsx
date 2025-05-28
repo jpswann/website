@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BreadcrumbsNav from "./components/BreadcrumbsNav";
 import Home from "./pages/Home";
@@ -18,6 +23,7 @@ import Frontend from "./pages/Frontend";
 import Connect4 from "./pages/Connect4";
 import ComingSoon from "./components/ComingSoon";
 import Backend from "./pages/Backend";
+import Chatbot from "./components/Chatbot";
 
 function App() {
   let theme = createTheme();

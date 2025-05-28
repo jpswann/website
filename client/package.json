@@ -20,6 +20,7 @@
     "emailjs-com": "^3.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.5.3",
     "web-vitals": "^2.1.4"
   },
@@ -46,7 +47,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5173",
+  "proxy": "http://localhost:8000",
   "devDependencies": {
     "@types/node": "^20.17.47",
     "@types/react": "^19.1.3",

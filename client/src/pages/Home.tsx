@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import HomeCards from "../components/cards/HomeCards";
 import ActionAreaCards from "../components/cards/ActionAreaCards";
+import Chatbot from "../components/Chatbot";
 
 const HomePage = () => {
   return (
@@ -43,6 +44,17 @@ const HomePage = () => {
       </Box>
       <HomeCards />
       <ActionAreaCards />
+      <Box sx={{ ml: 20, mb: 2, mt: 6 }}>
+        <Typography
+          variant="h2"
+          sx={{
+            fontSize: { xs: "2.5rem" },
+          }}
+        >
+          Personal Assistant:
+        </Typography>
+      </Box>
+      <Chatbot />
     </>
   );
 };

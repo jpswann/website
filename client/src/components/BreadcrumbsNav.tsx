@@ -5,12 +5,11 @@ const BreadcrumbsNav = () => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
-  return (
+  return pathnames.length ? (
     <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }}>
       <Link component={RouterLink} underline="hover" color="inherit" to="/">
         Home
       </Link>
-
       {pathnames.map((value, index) => {
         const to = `/${pathnames.slice(0, index + 1).join("/")}`;
         const label = value.charAt(0).toUpperCase() + value.slice(1);
@@ -33,6 +32,8 @@ const BreadcrumbsNav = () => {
         );
       })}
     </Breadcrumbs>
+  ) : (
+    <></>
   );
 };
 
