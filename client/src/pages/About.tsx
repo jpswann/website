@@ -21,8 +21,11 @@ const About: React.FC = () => {
         >
           About
           <Typography
-            variant="h5"
-            sx={{ mt: 2, color: "rgba(130, 130, 130, 0.7) !important" }}
+            sx={{
+              fontSize: "1.5rem",
+              mt: 2,
+              color: "rgba(130, 130, 130, 0.7) !important",
+            }}
           >
             Bridging Military Precision and Technical Expertise
           </Typography>

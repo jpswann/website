@@ -7,30 +7,60 @@ import { SYSTEM_MESSAGE } from "../data/chatbotSystemMessage";
 import { getOrCreateSessionId } from "../utils/session";
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([SYSTEM_MESSAGE]);
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const ws = useRef<WebSocket | null>(null);
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
   const [sessionId] = useState(getOrCreateSessionId());
+  const WS_URL = `ws://localhost:8000/?sessionId=${sessionId}`;
+  const connectedRef = useRef(false);
 
   useEffect(() => {
-    const setRoles = async () => {
-      try {
-        const response = await axios.post("/api/chatbot", {
-          sessionId: sessionId,
-          messages: [SYSTEM_MESSAGE],
-        });
+    ws.current = new WebSocket(WS_URL);
 
-        setMessages([
-          SYSTEM_MESSAGE,
-          { role: "assistant", content: response.data },
-        ]);
-      } catch (error) {
-        console.error("error setting role", error);
+    ws.current.onopen = () => {
+      console.log("WebSocket connected");
+    };
+
+    ws.current.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        if (data.role === "assistant" && data.content) {
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: data.content },
+          ]);
+          setIsSending(false);
+        }
+      } catch (err) {
+        console.error("Error parsing WS message:", err);
       }
     };
-    setRoles();
+
+    ws.current.onerror = (event) => {
+      console.error("WebSocket error:", event);
+      if (ws.current?.readyState !== WebSocket.OPEN) {
+        console.error("WebSocket is not open:", ws.current?.readyState);
+      }
+    };
+
+    ws.current.onclose = (event) => {
+      console.log("WebSocket closed", {
+        code: event.code,
+        reason: event.reason,
+        wasClean: event.wasClean,
+      });
+    };
+
+    return () => {
+      if (ws.current) {
+        ws.current.close(1000, "Component unmounting");
+        ws.current = null;
+        connectedRef.current = false;
+      }
+    };
   }, []);
 
   useEffect(() => {
