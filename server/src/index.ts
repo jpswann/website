@@ -4,6 +4,10 @@ import cors from "cors";
 import chatRoutes from "./routes/chatRoutes";
 import rateLimit from "express-rate-limit";
 import { createClient } from "redis";
+import { connectQueue } from "./shared/queue";
+import { runWorker } from "./controllers/chatController";
+import http from "http";
+import { setupWebSocketServer } from "./websocket";
 
 dotenv.config();
 
@@ -27,18 +31,33 @@ redisClient.on("error", (err) => {
 });
 
 async function startServer() {
+  const server = http.createServer(app);
+
   try {
+    const channel = await connectQueue();
+    console.log("Connected to RabbitMQ");
+
     await redisClient.connect();
     console.log("Connected to Redis");
 
     app.locals.redisClient = redisClient;
+    app.locals.rabbitChannel = channel;
 
+    await runWorker(redisClient);
     app.use("/api/chatbot", chatRoutes);
 
-    const server = app.listen(PORT, () => {
+    app.get("/", (req, res) => {
+      res.send("Server is running.");
+    });
+
+    // Setup WebSocket server with extracted function
+    setupWebSocketServer(server, channel);
+
+    server.listen(PORT, () => {
       console.log(`🚀 Server listening on http://localhost:${PORT}`);
     });
 
+    // Graceful shutdown
     const shutdown = async () => {
       console.log("\n🔌 Shutting down server...");
       await redisClient.quit();

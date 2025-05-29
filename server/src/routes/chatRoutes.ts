@@ -1,8 +1,8 @@
 import express from "express";
-import { getChat } from "../controllers/chatController";
+import { sendChatToQueue } from "../controllers/chatController";
 
 const router = express.Router();
 
-router.post("/", getChat);
+router.post("/", sendChatToQueue);
 
 export default router;
