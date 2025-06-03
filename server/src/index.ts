@@ -50,14 +50,12 @@ async function startServer() {
       res.send("Server is running.");
     });
 
-    // Setup WebSocket server with extracted function
     setupWebSocketServer(server, channel);
 
     server.listen(PORT, () => {
       console.log(`Server listening on http://localhost:${PORT}`);
     });
 
-    // Graceful shutdown
     const shutdown = async () => {
       console.log("\n🔌 Shutting down server...");
       await redisClient.quit();

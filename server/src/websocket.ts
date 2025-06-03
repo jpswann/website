@@ -1,4 +1,3 @@
-// websocket.ts
 import WebSocket, { WebSocketServer } from "ws";
 import { Channel } from "amqplib";
 
@@ -53,19 +52,18 @@ export function setupWebSocketServer(
 
     clients.set(sessionId, ws);
 
-    // ws.send(
-    //   JSON.stringify({
-    //     role: "assistant",
-    //     content: "Welcome! Ask me anything about Jason's background.",
-    //   })
-    // );
+    ws.send(
+      JSON.stringify({
+        role: "assistant",
+        content: "Hello! I'm here to help you explore Jason's technical background, work experience, and personal projects. What would you like to know about Jason's skills and experiences?",
+      })
+    );
 
     ws.on("message", async (message) => {
       try {
         const parsed = JSON.parse(message.toString());
         const { content } = parsed;
 
-        // Enqueue user message to RabbitMQ for processing
         await channel.assertQueue(REQUEST_QUEUE, { durable: true });
         const payload = { sessionId, message: content };
         channel.sendToQueue(
@@ -79,6 +77,7 @@ export function setupWebSocketServer(
     });
 
     ws.on("close", () => {
+      console.log("WS connection closed")
       clients.delete(sessionId);
     });
   });

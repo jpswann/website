@@ -1,4 +1,3 @@
-// db.ts
 import { Pool } from "pg";
 import dotenv from "dotenv";
 
@@ -15,11 +14,11 @@ const pool = new Pool({
 pool
   .connect()
   .then((client) => {
-    console.log("✅ Connected to PostgreSQL");
-    client.release(); // Always release the client when done
+    console.log("Connected to PostgreSQL");
+    client.release();
   })
   .catch((err) => {
-    console.error("❌ PostgreSQL connection error:", err);
+    console.error("PostgreSQL connection error:", err);
   });
 
 pool.query("SELECT current_database()", (err, res) => {
