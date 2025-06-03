@@ -17,7 +17,7 @@ export const connectQueue = async () => {
     durable: true,
   });
 
-  console.log(`📥 Connected to RabbitMQ queue: ${QUEUE_NAME}`);
+  console.log(`Connected to RabbitMQ queue: ${QUEUE_NAME}`);
 
   return channel;
 };
@@ -35,8 +35,8 @@ export const publishToQueue = async (message: object) => {
   });
 
   if (!ok) {
-    console.warn("⚠️ Message was not sent successfully. Queue may be full.");
+    console.warn("Message was not sent successfully. Queue may be full.");
   } else {
-    console.log(`📤 Message sent: ${JSON.stringify(message)}`);
+    console.log(`Message sent: ${JSON.stringify(message)}`);
   }
 };

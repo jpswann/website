@@ -75,7 +75,6 @@ const Chatbot = () => {
     setIsSending(true);
 
     const updatedMessages: Message[] = [
-      SYSTEM_MESSAGE,
       ...messages,
       { role: "user", content: input },
     ];

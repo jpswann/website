@@ -54,7 +54,7 @@ async function startServer() {
     setupWebSocketServer(server, channel);
 
     server.listen(PORT, () => {
-      console.log(`🚀 Server listening on http://localhost:${PORT}`);
+      console.log(`Server listening on http://localhost:${PORT}`);
     });
 
     // Graceful shutdown
@@ -62,7 +62,7 @@ async function startServer() {
       console.log("\n🔌 Shutting down server...");
       await redisClient.quit();
       server.close(() => {
-        console.log("👋 Server closed");
+        console.log("Server closed");
         process.exit(0);
       });
     };
@@ -70,7 +70,7 @@ async function startServer() {
     process.on("SIGINT", shutdown);
     process.on("SIGTERM", shutdown);
   } catch (error) {
-    console.error("❌ Failed to start server:", error);
+    console.error("Failed to start server:", error);
     process.exit(1);
   }
 }

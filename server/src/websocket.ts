@@ -1,6 +1,6 @@
 // websocket.ts
 import WebSocket, { WebSocketServer } from "ws";
-import { Channel } from "amqplib"; // assuming this is the type of your channel
+import { Channel } from "amqplib";
 
 type ClientsMap = Map<string, WebSocket>;
 
@@ -15,7 +15,6 @@ export function setupWebSocketServer(
   const REQUEST_QUEUE = "chatbot_messages";
   const RESPONSE_QUEUE = "chatbot_responses";
 
-  // Consume responses from RabbitMQ and forward to client WS
   channel.assertQueue(RESPONSE_QUEUE, { durable: true }).then(() => {
     channel.consume(RESPONSE_QUEUE, (msg) => {
       if (!msg) return;
@@ -47,13 +46,19 @@ export function setupWebSocketServer(
       return;
     }
 
-    // Close previous WS if duplicate connection for same sessionId
     if (clients.has(sessionId)) {
       const existing = clients.get(sessionId);
       existing?.close(1000, "Duplicate connection");
     }
 
     clients.set(sessionId, ws);
+
+    // ws.send(
+    //   JSON.stringify({
+    //     role: "assistant",
+    //     content: "Welcome! Ask me anything about Jason's background.",
+    //   })
+    // );
 
     ws.on("message", async (message) => {
       try {

@@ -4,7 +4,7 @@
   "main": "server/dist/index.js",
   "scripts": {
     "build": "rimraf server/dist && cd server && npx tsc",
-    "server": "nodemon ts-node server/src/index.js",
+    "server": "nodemon --watch server/src --exec ts-node server/src/index.ts",
     "client": "npm run dev --prefix client",
     "predev": "npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\""
@@ -15,6 +15,8 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.10",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

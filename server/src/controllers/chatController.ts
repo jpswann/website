@@ -28,6 +28,17 @@ const callGroq = async (apiUrl: string, apiKey: string, messages: any[]) => {
 
 const breaker = new opossum(callGroq, breakerOptions);
 
+breaker.fallback(() => {
+  return {
+    role: "assistant",
+    content: "The assistant is currently unavailable. Please try again.",
+  };
+});
+
+breaker.on("timeout", () => {
+  console.warn("Breaker timed out!");
+});
+
 export const sendChatToQueue = async (req: Request, res: Response) => {
   const { sessionId, messages } = req.body;
   const rabbitChannel = req.app.locals.rabbitChannel;
@@ -95,7 +106,7 @@ export const processMessage = async (
       EX: 3600,
     });
 
-    console.log(`✅ Processed message for session ${sessionId}`);
+    console.log(`Processed message for session ${sessionId}`);
 
     channel.sendToQueue(
       "chatbot_responses",
@@ -105,7 +116,7 @@ export const processMessage = async (
 
     return aiMessage;
   } catch (error) {
-    console.error("❌ Error in worker:", error);
+    console.error("Error in worker:", error);
     return null;
   }
 };
@@ -126,5 +137,5 @@ export const runWorker = async (
     }
   });
 
-  console.log("👷 Worker is running and waiting for messages...");
+  console.log("Worker is running and waiting for messages...");
 };
