@@ -1,9 +1,15 @@
-// src/context/WebSocketContext.tsx
-import React, { createContext, useContext, useEffect, useRef } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  ReactNode,
+  MutableRefObject,
+} from "react";
 import { getOrCreateSessionId } from "../utils/session";
 
 interface WebSocketContextType {
-  ws: React.MutableRefObject<WebSocket | null>;
+  ws: MutableRefObject<WebSocket | null>;
   sendMessage: (message: any) => void;
 }
 
@@ -11,7 +17,7 @@ const WebSocketContext = createContext<WebSocketContextType | undefined>(
   undefined
 );
 
-export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({
+export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const ws = useRef<WebSocket | null>(null);
@@ -19,24 +25,25 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({
   const WS_URL = `ws://localhost:8000/?sessionId=${sessionId}`;
 
   useEffect(() => {
-    ws.current = new WebSocket(WS_URL);
+    const socket = new WebSocket(WS_URL);
+    ws.current = socket;
 
-    ws.current.onopen = () => {
+    socket.onopen = () => {
       console.log("WebSocket connected");
     };
 
-    ws.current.onclose = (event) => {
+    socket.onclose = (event) => {
       console.log("WebSocket closed", event);
     };
 
-    ws.current.onerror = (error) => {
+    socket.onerror = (error) => {
       console.error("WebSocket error", error);
     };
 
     return () => {
-      ws.current?.close(1000, "App unmounted");
+      socket.close(1000, "Component unmounted");
     };
-  }, []);
+  }, [WS_URL]);
 
   const sendMessage = (message: any) => {
     if (ws.current && ws.current.readyState === WebSocket.OPEN) {
