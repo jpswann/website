@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import opossum from "opossum";
 import { connectQueue } from "../shared/queue";
-import emailjs from "emailjs-com";
+import nodemailer from "nodemailer";
 
 const breakerOptions = {
   timeout: 5000,
@@ -9,22 +9,49 @@ const breakerOptions = {
   resetTimeout: 10000,
 };
 
-const sendEmail = async (
-  service_id: string,
-  template_id: string,
-  form: {
-    f_name: string;
-    l_name: string;
-    email: string;
-    message: string;
-  },
-  public_key: string
-) => {
-  await emailjs
-    .send(service_id, template_id, form, public_key)
-    .catch((error: any) => {
-      console.error("Error emailjs: ", error);
-    });
+const createTransporter = async () => {
+  const transporter = await nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: process.env.SMTP_SECURE === "true",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  });
+
+  return transporter;
+};
+
+const sendEmail = async (form: {
+  f_name: string;
+  l_name: string;
+  email: string;
+  message: string;
+}) => {
+  const transporter = await createTransporter();
+
+  const mailOptions = {
+    from: `"${form.f_name} ${form.l_name}" <${form.email}>`,
+    to: process.env.RECEIVER_EMAIL,
+    subject: `Contact form message from ${form.f_name} ${form.l_name}`,
+    text: form.message,
+    html: `
+      <p><strong>From:</strong> ${form.f_name} ${form.l_name} (${
+      form.email
+    })</p>
+      <p><strong>Message:</strong></p>
+      <p>${form.message.replace(/\n/g, "<br>")}</p>
+    `,
+  };
+  console.log("SMTP_HOST:", process.env.SMTP_HOST);
+  console.log("SMTP_PORT:", process.env.SMTP_PORT);
+  console.log("SMTP_SECURE:", process.env.SMTP_SECURE);
+
+  await transporter.sendMail(mailOptions).catch((err) => console.log(err));
 };
 
 const breaker = new opossum(sendEmail, breakerOptions);
@@ -38,14 +65,15 @@ breaker.on("timeout", () => {
 });
 
 export const sendEmailToQueue = async (req: Request, res: Response) => {
-  const { sessionId, form } = req.body;
+  const { form } = req.body;
   const rabbitChannel = req.app.locals.rabbitChannel;
 
   try {
     await rabbitChannel.sendToQueue(
       "email_messages",
-      Buffer.from(JSON.stringify({ sessionId, form: form }))
+      Buffer.from(JSON.stringify({ form: form }))
     );
+    res.status(200).json({ message: "Email queued successfully" });
   } catch (error) {
     res.status(500).json({
       error: error instanceof Error ? error.message : "Unknown error",
@@ -53,29 +81,17 @@ export const sendEmailToQueue = async (req: Request, res: Response) => {
   }
 };
 
-export const processMessage = async (data: {
-  sessionId: string;
-  form: any;
-}) => {
-  const { sessionId, form } = data;
+export const processMessage = async (data: { form: any }) => {
+  const { form } = data;
 
   try {
-    const service_id = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const template_id = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const public_key = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
-
-    if (!service_id || !template_id || !public_key) {
-      throw new Error("Missing environment variables");
+    if (!form) {
+      throw new Error("Missing form");
     }
 
-    const response = await breaker.fire(
-      service_id,
-      template_id,
-      form,
-      public_key
-    );
+    const response = await breaker.fire(form);
 
-    console.log(`Processed email for session ${sessionId}`);
+    console.log(`Processed email for  ${form.email}`);
 
     return response;
   } catch (error) {

@@ -5,7 +5,8 @@ import emailRoutes from "./routes/emailRoutes";
 import rateLimit from "express-rate-limit";
 import { createClient } from "redis";
 import { connectQueue } from "./shared/queue";
-import { runWorker } from "./controllers/chatController";
+import { runWorker as runChatWorker } from "./controllers/chatController";
+import { runWorker as runEmailWorker } from "./controllers/emailController";
 import http from "http";
 import { setupWebSocketServer } from "./websocket";
 
@@ -43,7 +44,8 @@ async function startServer() {
     app.locals.redisClient = redisClient;
     app.locals.rabbitChannel = rabbitChannel;
 
-    await runWorker(redisClient);
+    await runChatWorker(redisClient);
+    await runEmailWorker();
     app.use("/api/email", emailRoutes);
 
     app.get("/", (req, res) => {
