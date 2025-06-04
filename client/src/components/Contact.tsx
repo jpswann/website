@@ -6,6 +6,7 @@ interface Props {}
 
 const Contact: React.FC<Props> = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const [form, setForm] = useState({
     f_name: "",
@@ -20,23 +21,26 @@ const Contact: React.FC<Props> = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    setDisabled(true);
     e.preventDefault();
 
-    emailjs
+    await emailjs
       .send(
-        "service_xi76y9m", // e.g. service_xxx
-        "template_7d1l0qo", // e.g. template_xxx
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
         form,
-        "t6mjgDKHYHEJGgZRX" // e.g. public key
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!
       )
       .then(
-        (result) => {
+        () => {
           setSubmitted(true);
+          setDisabled(false);
           setForm({ f_name: "", l_name: "", email: "", message: "" });
         },
         (error) => {
           console.error(error.text);
+          setDisabled(false);
         }
       );
   };
@@ -103,6 +107,7 @@ const Contact: React.FC<Props> = () => {
               variant="contained"
               fullWidth
               className="button contact-button"
+              disabled={disabled}
             >
               Submit
             </Button>
