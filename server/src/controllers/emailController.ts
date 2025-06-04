@@ -47,9 +47,6 @@ const sendEmail = async (form: {
       <p>${form.message.replace(/\n/g, "<br>")}</p>
     `,
   };
-  console.log("SMTP_HOST:", process.env.SMTP_HOST);
-  console.log("SMTP_PORT:", process.env.SMTP_PORT);
-  console.log("SMTP_SECURE:", process.env.SMTP_SECURE);
 
   await transporter.sendMail(mailOptions).catch((err) => console.log(err));
 };
