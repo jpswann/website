@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import axios from "axios";
 import opossum from "opossum";
 import { connectQueue } from "../shared/queue";
@@ -12,7 +11,7 @@ const breakerOptions = {
 };
 
 const callGroq = async (apiUrl: string, apiKey: string, messages: any[]) => {
-  console.log(`apiURL: ${apiUrl}, apiKey: ${apiKey}, messages: ${messages}`)
+  console.log(`apiURL: ${apiUrl}, apiKey: ${apiKey}, messages: ${messages}`);
   return axios.post(
     apiUrl,
     {
@@ -41,8 +40,12 @@ breaker.on("timeout", () => {
   console.warn("Breaker timed out!");
 });
 
-export const sendChatToQueue = async (sessionId: string, messages: string[],rabbitChannel: Channel,redisClient: ReturnType<typeof createClient>) => {
-
+export const sendChatToQueue = async (
+  sessionId: string,
+  messages: string[],
+  rabbitChannel: Channel,
+  redisClient: ReturnType<typeof createClient>
+) => {
   const redisKey = `chat:${sessionId}`;
   let updatedMessages: any[] = [];
 
@@ -64,7 +67,7 @@ export const sendChatToQueue = async (sessionId: string, messages: string[],rabb
       Buffer.from(JSON.stringify({ sessionId, messages: trimmedHistory }))
     );
   } catch (error) {
-    console.error('sendChatToQueue: ', error)
+    console.error("sendChatToQueue: ", error);
   }
 };
 
@@ -84,9 +87,7 @@ export const processMessage = async (
     const apiKey = process.env.GROQ_API_KEY;
 
     if (!apiUrl || !apiKey) {
-      throw new Error(
-        "Missing environment variables"
-      );
+      throw new Error("Missing environment variables");
     }
 
     const response = await breaker.fire(apiUrl, apiKey, messages);

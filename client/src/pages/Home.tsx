@@ -44,7 +44,7 @@ const HomePage = () => {
       </Box>
       <HomeCards />
       <ActionAreaCards />
-      <Box sx={{ ml: 20, mb: 2, mt: 6 }}>
+      {/* <Box sx={{ ml: 20, mb: 2, mt: 6 }}>
         <Typography
           variant="h2"
           sx={{
@@ -54,7 +54,7 @@ const HomePage = () => {
           Personal Assistant:
         </Typography>
       </Box>
-      <Chatbot />
+      <Chatbot /> */}
     </>
   );
 };

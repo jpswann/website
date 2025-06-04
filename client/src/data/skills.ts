@@ -65,4 +65,8 @@ export const skills: Record<string, SkillCardProps[]> = {
     { subtitle: "NoSQL", text: "NoSQL" },
     { subtitle: "PostgreSQL", text: "PostgreSQL" },
   ],
+  messaging: [
+    { subtitle: "RabbitMQ", text: "RabbitMQ" },
+    { subtitle: "WebSockets", text: "WebSocket" },
+  ],
 };
