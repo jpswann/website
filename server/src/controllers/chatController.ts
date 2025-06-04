@@ -2,7 +2,8 @@ import { Request, Response } from "express";
 import axios from "axios";
 import opossum from "opossum";
 import { connectQueue } from "../shared/queue";
-import { createClient, RedisClientType } from "redis";
+import { createClient } from "redis";
+import { Channel } from "amqplib";
 
 const breakerOptions = {
   timeout: 5000,
@@ -11,6 +12,7 @@ const breakerOptions = {
 };
 
 const callGroq = async (apiUrl: string, apiKey: string, messages: any[]) => {
+  console.log(`apiURL: ${apiUrl}, apiKey: ${apiKey}, messages: ${messages}`)
   return axios.post(
     apiUrl,
     {
@@ -39,10 +41,7 @@ breaker.on("timeout", () => {
   console.warn("Breaker timed out!");
 });
 
-export const sendChatToQueue = async (req: Request, res: Response) => {
-  const { sessionId, messages } = req.body;
-  const rabbitChannel = req.app.locals.rabbitChannel;
-  const redisClient = req.app.locals.redisClient;
+export const sendChatToQueue = async (sessionId: string, messages: string[],rabbitChannel: Channel,redisClient: ReturnType<typeof createClient>) => {
 
   const redisKey = `chat:${sessionId}`;
   let updatedMessages: any[] = [];
@@ -65,9 +64,7 @@ export const sendChatToQueue = async (req: Request, res: Response) => {
       Buffer.from(JSON.stringify({ sessionId, messages: trimmedHistory }))
     );
   } catch (error) {
-    res.status(500).json({
-      error: error instanceof Error ? error.message : "Unknown error",
-    });
+    console.error('sendChatToQueue: ', error)
   }
 };
 
@@ -88,7 +85,7 @@ export const processMessage = async (
 
     if (!apiUrl || !apiKey) {
       throw new Error(
-        "Missing GROQ_API_URL or GROQ_API_KEY in environment variables"
+        "Missing environment variables"
       );
     }
 

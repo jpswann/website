@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
-import chatRoutes from "./routes/chatRoutes";
+import emailRoutes from "./routes/emailRoutes";
 import rateLimit from "express-rate-limit";
 import { createClient } from "redis";
 import { connectQueue } from "./shared/queue";
@@ -34,23 +34,23 @@ async function startServer() {
   const server = http.createServer(app);
 
   try {
-    const channel = await connectQueue();
+    const rabbitChannel = await connectQueue();
     console.log("Connected to RabbitMQ");
 
     await redisClient.connect();
     console.log("Connected to Redis");
 
     app.locals.redisClient = redisClient;
-    app.locals.rabbitChannel = channel;
+    app.locals.rabbitChannel = rabbitChannel;
 
     await runWorker(redisClient);
-    app.use("/api/chatbot", chatRoutes);
+    app.use("/api/email", emailRoutes);
 
     app.get("/", (req, res) => {
       res.send("Server is running.");
     });
 
-    setupWebSocketServer(server, channel);
+    setupWebSocketServer(server, rabbitChannel, redisClient);
 
     server.listen(PORT, () => {
       console.log(`Server listening on http://localhost:${PORT}`);

@@ -1,8 +1,9 @@
-import { Message } from "../interfaces/interfaces";
+import { Messages } from "../interfaces/interfaces";
 
-export const SYSTEM_MESSAGE: Message = {
-  role: "system",
-  content: `You are a helpful assistant designed to answer questions about Jason's resume, technical background, work experience, and personal projects.
+export const SYSTEM_MESSAGE: Messages[] = [
+  {
+    role: "system",
+    content: `You are a helpful assistant designed to answer questions about Jason's resume, technical background, work experience, and personal projects.
 Your responsibilities include:
 
 1. **Technical Background:** Explaining Jason's skills in JavaScript/Typescript, React, Node.js, Express, and Relational Databases.
@@ -42,4 +43,10 @@ Jason's Resume:
 --- 
 
 If a user asks a question outside of Jason’s background, politely redirect them to focus on Jason’s portfolio or resume.`,
-};
+  },
+  {
+    role: "assistant",
+    content:
+      "Hello! I'm here to help you explore Jason's technical background, work experience, and personal projects. What would you like to know about Jason's skills and experiences?",
+  },
+];

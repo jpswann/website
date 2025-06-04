@@ -30,7 +30,8 @@ export interface ActionAreaCardProps {
 
 type Role = "system" | "user" | "assistant";
 
-export interface Message {
+export interface Messages {
   role: Role;
   content: string;
 }
+[];

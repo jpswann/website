@@ -1,11 +1,14 @@
 import WebSocket, { WebSocketServer } from "ws";
 import { Channel } from "amqplib";
+import { sendChatToQueue } from "./controllers/chatController";
+import { createClient } from "redis";
 
 type ClientsMap = Map<string, WebSocket>;
 
 export function setupWebSocketServer(
   server: import("http").Server,
-  channel: Channel
+  rabbitChannel: Channel,
+  redisClient: ReturnType<typeof createClient>
 ) {
   const wss = new WebSocketServer({ server });
 
@@ -14,8 +17,8 @@ export function setupWebSocketServer(
   const REQUEST_QUEUE = "chatbot_messages";
   const RESPONSE_QUEUE = "chatbot_responses";
 
-  channel.assertQueue(RESPONSE_QUEUE, { durable: true }).then(() => {
-    channel.consume(RESPONSE_QUEUE, (msg) => {
+  rabbitChannel.assertQueue(RESPONSE_QUEUE, { durable: true }).then(() => {
+    rabbitChannel.consume(RESPONSE_QUEUE, (msg) => {
       if (!msg) return;
 
       try {
@@ -29,7 +32,7 @@ export function setupWebSocketServer(
       } catch (err) {
         console.error("Error parsing message from RabbitMQ:", err);
       } finally {
-        channel.ack(msg);
+        rabbitChannel.ack(msg);
       }
     });
   });
@@ -62,15 +65,10 @@ export function setupWebSocketServer(
     ws.on("message", async (message) => {
       try {
         const parsed = JSON.parse(message.toString());
-        const { content } = parsed;
 
-        await channel.assertQueue(REQUEST_QUEUE, { durable: true });
-        const payload = { sessionId, message: content };
-        channel.sendToQueue(
-          REQUEST_QUEUE,
-          Buffer.from(JSON.stringify(payload)),
-          { persistent: true }
-        );
+        await rabbitChannel.assertQueue(REQUEST_QUEUE, { durable: true });
+
+        await sendChatToQueue(sessionId,parsed,rabbitChannel,redisClient)
       } catch (err) {
         console.error("Error handling WS message:", err);
       }

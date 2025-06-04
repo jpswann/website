@@ -1,28 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import { Box, Button, Grid, TextField } from "@mui/material";
-import { Message } from "../interfaces/interfaces";
+import { Messages } from "../interfaces/interfaces";
 import { SYSTEM_MESSAGE } from "../data/chatbotSystemMessage";
-import { getOrCreateSessionId } from "../utils/session";
+import { useWebSocket } from "../context/WebSocketContext";
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState<Message[]>([SYSTEM_MESSAGE]);
+  const [messages, setMessages] = useState<Messages[]>(SYSTEM_MESSAGE);
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
-  const ws = useRef<WebSocket | null>(null);
+  const { ws, sendMessage } = useWebSocket();
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
-  const [sessionId] = useState(getOrCreateSessionId());
-  const WS_URL = `ws://localhost:8000/?sessionId=${sessionId}`;
-  const connectedRef = useRef(false);
 
   useEffect(() => {
-    ws.current = new WebSocket(WS_URL);
-
-    ws.current.onopen = () => {
-      console.log("WebSocket connected");
-    };
+    if (!ws.current) return;
 
     ws.current.onmessage = (event) => {
       try {
@@ -39,42 +31,30 @@ const Chatbot = () => {
       }
     };
 
-    ws.current.onerror = (event) => {
-      console.error("WebSocket error:", event);
-      if (ws.current?.readyState !== WebSocket.OPEN) {
-        console.error("WebSocket is not open:", ws.current?.readyState);
-      }
-    };
-
-    ws.current.onclose = (event) => {
-      console.log("WebSocket closed", {
-        code: event.code,
-        reason: event.reason,
-        wasClean: event.wasClean,
-      });
-    };
-
     return () => {
       if (ws.current) {
-        ws.current.close(1000, "Component unmounting");
-        ws.current = null;
-        connectedRef.current = false;
+        ws.current.onmessage = null;
       }
     };
-  }, []);
+  }, [ws, messages]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
+  const sendChatMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!input.trim() || isSending) return;
 
+    if (!ws.current || ws.current.readyState !== WebSocket.OPEN) {
+      console.error("WebSocket not connected");
+      return;
+    }
+
     setIsSending(true);
 
-    const updatedMessages: Message[] = [
+    const updatedMessages: Messages[] = [
       ...messages,
       { role: "user", content: input },
     ];
@@ -83,15 +63,7 @@ const Chatbot = () => {
     setInput("");
 
     try {
-      const response = await axios.post("/api/chatbot", {
-        sessionId: sessionId,
-        messages: updatedMessages,
-      });
-
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: response.data },
-      ]);
+      sendMessage(updatedMessages);
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -158,7 +130,7 @@ const Chatbot = () => {
           className="centered-box"
           noValidate
           autoComplete="off"
-          onSubmit={sendMessage}
+          onSubmit={sendChatMessage}
           sx={{
             display: "flex",
             alignItems: "center",
