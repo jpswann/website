@@ -11,7 +11,6 @@ const breakerOptions = {
 };
 
 const callGroq = async (apiUrl: string, apiKey: string, messages: any[]) => {
-  console.log(`apiURL: ${apiUrl}, apiKey: ${apiKey}, messages: ${messages}`);
   return axios.post(
     apiUrl,
     {
